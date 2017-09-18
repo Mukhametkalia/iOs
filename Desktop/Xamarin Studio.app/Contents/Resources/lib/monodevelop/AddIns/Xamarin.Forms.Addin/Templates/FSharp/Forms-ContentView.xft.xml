@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Forms ContentView</_Name>
+		<_Category>Forms</_Category>
+		<LanguageName>F#</LanguageName>
+		<_Description>Creates a Forms ContentView.</_Description>
+<!--		<ProjectType>Forms</ProjectType>-->
+		<DefaultFilename>MyView</DefaultFilename>
+	</TemplateConfiguration>
+	
+	<Conditions>
+	</Conditions>
+	
+	<!-- Template Content -->
+	<TemplateFiles>
+		<File name="${Name}" 
+			  DefaultExtension=".fs" 
+			  AddStandardHeader="True" 
+			  BuildAction="Compile"
+			  src="../FSharp/Core/NewContentView.fs"/>
+	</TemplateFiles>
+</Template>

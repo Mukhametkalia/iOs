@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Dialog View Controller</_Name>
+		<_Category projectType="XamarinIOS">iOS</_Category>
+		<_Category projectType="TVOS">tvOS</_Category>
+		<Icon>xib-template-window</Icon>
+		<LanguageName>C#</LanguageName>
+		<DefaultFilename>MyDialogViewController</DefaultFilename>
+		<ProjectType>XamarinIOS, TVOS</ProjectType>
+		<_Description>A MonoTouch.Dialog ViewController: simplified UITableViews.</_Description>
+	</TemplateConfiguration>
+
+	<TemplateFiles>
+		<File name="${Name}.${LanguageExtension}">
+			<AssemblyReference>MonoTouch.Dialog-1</AssemblyReference>
+<![CDATA[using System;
+using MonoTouch.Dialog;
+using UIKit;
+
+namespace ${Namespace}
+{
+	public class ${Name} : DialogViewController
+	{
+		public ${Name} () : base (UITableViewStyle.Grouped, null)
+		{
+			Root = new RootElement ("MyDialogViewController") {
+				new Section ("First Section") {
+					new StringElement ("Hello", () => {
+						var alert = UIAlertController.Create ("Hola", "Thanks for tapping, merci!", UIAlertControllerStyle.Alert);
+						var defaultAction = UIAlertAction.Create ("OK", UIAlertActionStyle.Default, null);
+						alert.AddAction (defaultAction);
+						PresentViewController (alert, true, null);
+					}),
+					new EntryElement ("Name", "Enter your name", String.Empty)
+				},
+				new Section ("Second Section") {
+				},
+			};
+		}
+	}
+}]]>
+		</File>
+	</TemplateFiles>
+</Template>

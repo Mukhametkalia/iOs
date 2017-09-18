@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Single View App</_Name>
+		<Category>ios/app/general</Category>
+		<Icon>md-ios-single-view-project</Icon>
+		<Image id="md-ios-single-view-project" />
+		<LanguageName>F#</LanguageName>
+		<Wizard>MonoDevelop.IPhone.ProjectTemplateWizard</Wizard>
+		<GroupId>md-single-view-ios-unified</GroupId>
+		<DefaultParameters>MinimumOSVersion=8.0</DefaultParameters>
+		<_Description><![CDATA[Creates a single view app which offers a storyboard that contains the view and a view controller to manage it.]]></_Description>
+	</TemplateConfiguration>
+	<Actions>
+		<Open filename="AppDelegate.fs" />
+	</Actions>
+	<Combine name="${ProjectName}" directory=".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		<Project name="${ProjectName}" directory="." type="XamarinIOS">
+			<Options TargetFrameworkVersion="Xamarin.iOS,Version=v1.0" DefineConstantsDebug="ENABLE_TEST_CLOUD" />
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="mscorlib" />
+				<Reference type="Gac" refto="FSharp.Core" />
+				<Reference type="Gac" refto="Xamarin.iOS" />
+			</References>
+			<Files>
+				<Directory name="Assets.xcassets">
+					<Directory name="AppIcon.appiconset">
+						<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/AppIcons.json" />
+					</Directory>
+					<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/Empty.json" />
+				</Directory>
+				<Directory name="Resources" />
+				<FileTemplateReference TemplateID="LaunchScreen" name="LaunchScreen.storyboard" />
+				<File name="Info.plist" AddStandardHeader="False" src="../../Common/Info_Universal.plist.xml" if="UseUniversal"/>
+				<File name="Info.plist" AddStandardHeader="False" src="../../Common/Info_iPhone.plist.xml" if="UseIPhone"/>
+				<File name="Info.plist" AddStandardHeader="False" src="../../Common/Info_iPad.plist.xml" if="UseIPad"/>
+				<File name="Entitlements.plist" AddStandardHeader="False" src="../../Common/Entitlements.plist.xml" />
+				<File name="Main.storyboard" src="../Main.storyboard" />
+				<UnformattedFile name="ViewController.fs" AddStandardHeader="True" src="ViewController.fs.txt" />
+				<UnformattedFile name="AppDelegate.fs" AddStandardHeader="True" src="../../Common/AppDelegate.fs.txt" />
+				<UnformattedFile name="Main.fs" src="../../Common/Main.fs.txt" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

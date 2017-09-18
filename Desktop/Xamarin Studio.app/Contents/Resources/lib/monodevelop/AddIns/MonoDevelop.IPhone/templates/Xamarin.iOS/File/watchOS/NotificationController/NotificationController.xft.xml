@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Notification Controller</_Name>
+		<Icon>xib-template-window</Icon>
+		<_Category projectType="WatchOSAppExtension">watchOS</_Category>
+		<_Category projectType="XamarinIOSAppExtension">iOS | Apple Watch</_Category>
+		<LanguageName>C#</LanguageName>
+		<DefaultFilename>MyNotificationController</DefaultFilename>
+		<ProjectType>WatchOSAppExtension, XamarinIOSAppExtension</ProjectType>
+		<_Description>A custom class for creating a Notification Controller.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+		<PartialTypeSupport Requirement="Enabled" />
+	</Conditions>
+	
+	<TemplateFiles>
+		<File name="${Name}.cs" AddStandardHeader="True" src="NotificationController.cs" />
+		<File name="${Name}.designer.cs" AddStandardHeader="False" DependsOn="${Name}.cs" src="NotificationController.designer.cs" SuppressAutoOpen="True" />
+	</TemplateFiles>
+</Template>

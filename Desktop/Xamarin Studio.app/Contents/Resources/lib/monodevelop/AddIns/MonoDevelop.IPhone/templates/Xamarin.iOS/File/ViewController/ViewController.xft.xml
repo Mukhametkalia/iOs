@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>View Controller</_Name>
+		<Icon>xib-template-window</Icon>
+		<_Category projectType="XamarinIOS">iOS</_Category>
+		<_Category projectType="TVOS">tvOS</_Category>
+		<LanguageName>C#</LanguageName>
+		<DefaultFilename>MyViewController</DefaultFilename>
+		<ProjectType>XamarinIOS, TVOS</ProjectType>
+		<_Description>A custom class and Interface Builder documents for creating a View Controller using size classes.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+		<PartialTypeSupport Requirement="Enabled" />
+	</Conditions>
+	
+	<TemplateFiles>
+		<File name="${Name}.xib" src="ViewController.xib" AddStandardHeader="False" SuppressAutoOpen="True" />
+		<File name="${Name}.cs" src="ViewController.cs" AddStandardHeader="True" />
+		<File name="${Name}.designer.cs" src="ViewController.designer.cs" AddStandardHeader="False" DependsOn="${Name}.cs" SuppressAutoOpen="True" />
+	</TemplateFiles>
+</Template>

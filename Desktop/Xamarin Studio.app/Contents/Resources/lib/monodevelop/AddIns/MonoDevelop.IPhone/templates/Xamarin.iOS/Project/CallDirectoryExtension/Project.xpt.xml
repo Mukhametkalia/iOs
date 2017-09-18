@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Call Directory Extension</_Name>
+		<Visibility>NewProject</Visibility>
+		<Category>ios/extension/general</Category>
+		<Icon>md-ios-call-extension-project</Icon>
+		<Image id="md-ios-call-extension-project" />
+		<Wizard>MonoDevelop.IPhone.ExtensionProjectTemplateWizard</Wizard>
+		<LanguageName>C#</LanguageName>
+		<_Description><![CDATA[Creates a Call Directory extension that can associate a phone number with a name or tell the system when a number should be blocked.]]></_Description>
+	</TemplateConfiguration>
+
+	<Actions>
+		<Open filename = "CallDirectoryHandler.cs"/>
+	</Actions>
+
+	<Combine name = "${ProjectName}" directory = ".">
+		<Project name = "${ProjectName}" directory = "." type = "XamarinIOSAppExtension">
+			<Options Target = "Library" TargetFrameworkVersion = "Xamarin.iOS,Version=v1.0" />
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="Xamarin.iOS" />
+			</References>
+			<Files>
+				<Directory name="Resources"/>
+				<File name="Info.plist" AddStandardHeader="False" src="Info.plist.xml" />
+				<File name="Entitlements.plist" AddStandardHeader="False" src="../Common/Entitlements.plist.xml" />
+				<File name="CallDirectoryHandler.cs" AddStandardHeader="True" src="CallDirectoryHandler.cs" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

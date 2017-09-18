@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Unit Tests Project</_Name>
+		<Category>ios/tests/classic</Category>
+		<Icon>md-ios-test-project</Icon>
+		<Image id="md-ios-test-project" />
+		<LanguageName>C#</LanguageName>
+		<_Description>Creates a unit tests project for iOS.</_Description>
+		<Wizard>MonoDevelop.IPhone.ProjectTemplateWizard</Wizard>
+		<DefaultParameters>MinimumOSVersion=6.0</DefaultParameters>
+	</TemplateConfiguration>
+	
+	<Actions>
+		<Open filename = "UnitTestAppDelegate.cs"/>
+	</Actions>
+	
+	<Combine name = "${ProjectName}" directory = ".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		
+		<Project name = "${ProjectName}" directory = "." type = "MonoTouch">
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="monotouch" />
+				<Reference type="Gac" refto="MonoTouch.NUnitLite" />
+			</References>
+			<Files>
+				<Directory name="Resources" />
+				<File name="Info.plist" AddStandardHeader="False" src="../Common/Info_Universal.plist.xml" />
+				<File name="Entitlements.plist" AddStandardHeader="False" src="../Common/Entitlements.plist.xml" />
+				<File name="Main.cs" AddStandardHeader="True" src="Main.cs" />
+				<File name="UnitTestAppDelegate.cs" AddStandardHeader="True" src="UnitTestAppDelegate.cs" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

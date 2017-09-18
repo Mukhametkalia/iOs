@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Metal File</_Name>
+		<_Category>Mac</_Category>
+		<Icon>file-metal</Icon>
+		<LanguageName>*</LanguageName>
+		<DefaultFilename>File</DefaultFilename>
+		<ProjectType>XamMac2</ProjectType>
+		<_Description>A Metal shader source file.</_Description>
+	</TemplateConfiguration>
+
+	<Conditions>
+		<ParentProject RequireProject="True"/>
+	</Conditions>
+	
+	<TemplateFiles>
+		<File Name="${Name}.metal" DefaultExtension=".metal" SuppressAutoOpen="true" AddStandardHeader="true">
+<![CDATA[#include <metal_stdlib>
+using namespace metal;
+
+]]></File>
+	</TemplateFiles>
+</Template>

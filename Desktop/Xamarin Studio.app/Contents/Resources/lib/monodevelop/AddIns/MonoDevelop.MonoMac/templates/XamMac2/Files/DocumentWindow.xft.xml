@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Template Originator="Michael Hutchinson" Created="2010/06/07">
+
+	<!-- Template Header -->
+	<TemplateConfiguration>
+		<_Name>Document Window Controller</_Name>
+		<Icon>xib-template-window</Icon>
+		<_Category>Mac</_Category>
+		<LanguageName>C#</LanguageName>
+		<DefaultFilename>Window</DefaultFilename>
+		<ProjectType>XamMac2</ProjectType>
+		<_Description>A Document Window with a Controller for Xamarin.Mac.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+		<PartialTypeSupport Requirement="Enabled" />
+	</Conditions>
+	
+	<!-- Template Content -->
+	<TemplateFiles>
+		<File 
+			name="${Name}.cs" 
+			src="DocumentWindow/Window.cs" />
+		<File 
+			name="${Name}.designer.cs" 
+			src="DocumentWindow/Window.designer.cs"
+			DependsOn="${Name}.cs"
+			ShowAutogenerationNotice="True" 
+			AddStandardHeader="False" 
+			SuppressAutoOpen="True" />
+		<File 
+			name="${Name}.xib" 
+			src="DocumentWindow/Window.xib"
+			DefaultExtension=".xib" 
+			SuppressAutoOpen="True" />
+	</TemplateFiles>
+</Template>
+
+
+

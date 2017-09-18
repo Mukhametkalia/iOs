@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Class Library</_Name>
+		<Category>multiplat/library/forms</Category>
+		<Icon>md-crossplatform-pcl-project</Icon>
+		<Image id="md-crossplatform-pcl-project" />
+		<LanguageName>F#</LanguageName>
+		<_Description>Creates Xamarin.Forms Library using PCL.</_Description>
+    <GroupId>xamarin-forms-project-library</GroupId>
+	</TemplateConfiguration>
+
+	<Actions>
+	</Actions>
+
+	<Combine name = "${ProjectName}" directory = ".">
+		<Actions>
+			<Open filename = "MyPage.fs"/>
+		</Actions>
+
+		<Project name = "${ProjectName}" directory = ".">
+      <Options Target = "Library"
+					 TargetFrameworkVersion = ".NETPortable,Version=v4.5,Profile=Profile259"
+					 FSharpPortable = "true"
+					 TargetFSharpCoreVersion = "3.78.3.1"
+					 TargetProfile = "netcore" />
+			<Packages>
+				<Package Id="FSharp.Core" Version="4.0.0.1" local="true" /> 
+				<Package Id="Xamarin.Forms" Version="2.3.1.114" local="true" /> 
+			</Packages>
+			<Files>
+				<File name="MyPage.fs" AddStandardHeader="True" src="../FSharp/Core/MyPage.fs" />
+				<FileTemplateReference TemplateID="FSharpAssemblyInfo" name="AssemblyInfo.fs" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

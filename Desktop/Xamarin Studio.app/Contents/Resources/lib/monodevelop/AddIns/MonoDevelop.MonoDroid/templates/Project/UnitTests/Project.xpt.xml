@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Unit Test App</_Name>
+		<Category>android/tests/general</Category>
+		<Icon>md-android-test-project</Icon>
+		<Image id="md-android-test-project" />
+		<LanguageName>C#</LanguageName>
+		<_Description>Creates an Android Unit Tests Project.</_Description>
+		<GroupId>monodroid-unit-test-project</GroupId>
+	</TemplateConfiguration>
+	<Actions>
+		<Open filename="TestsSample.cs" />
+	</Actions>
+	<Combine name="${ProjectName}" directory=".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		<Project name="${ProjectName}" directory="." type="MonoDroid">
+			<Options AndroidApplication="true" AndroidResgenFile="Resources/Resource.designer.cs" AndroidResgenClass="Resource" />
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="Mono.Android" />
+				<Reference type="Gac" refto="Xamarin.Android.NUnitLite" />
+			</References>
+			<Files>
+				<File name="MainActivity.cs" src="MainActivity.cs" />
+				<File name="TestsSample.cs" src="TestsSample.cs" />
+				<Directory name="Resources">
+					<File name="Resource.designer.cs" src="../Common/Resource.cs" />
+					<RawFile name="AboutResources.txt" src="../Common/AboutResources.txt" />
+					<Directory name="mipmap-hdpi">
+						<RawFile name="Icon.png" src="../Common/icon-hdpi.png" />
+					</Directory>
+					<Directory name="mipmap-mdpi">
+						<RawFile name="Icon.png" src="../Common/icon-mdpi.png" />
+					</Directory>
+					<Directory name="mipmap-xhdpi">
+						<RawFile name="Icon.png" src="../Common/icon-xhdpi.png" />
+					</Directory>
+					<Directory name="mipmap-xxhdpi">
+						<RawFile name="Icon.png" src="../Common/icon-xxhdpi.png" />
+					</Directory>
+					<Directory name="mipmap-xxxhdpi">
+						<RawFile name="Icon.png" src="../Common/icon-xxxhdpi.png" />
+					</Directory>
+				</Directory>
+				<Directory name="Properties">
+					<File name="AssemblyInfo.cs" src="../Common/AssemblyInfo.cs" />
+				</Directory>
+				<Directory name="Assets">
+					<RawFile name="AboutAssets.txt" src="../Common/AboutAssets.txt" BuildAction="None" />
+				</Directory>
+			</Files>
+		</Project>
+	</Combine>
+</Template>

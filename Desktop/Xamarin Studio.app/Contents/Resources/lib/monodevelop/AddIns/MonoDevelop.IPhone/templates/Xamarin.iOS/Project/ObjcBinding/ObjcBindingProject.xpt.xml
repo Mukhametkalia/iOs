@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Template>
+  <TemplateConfiguration>
+    <_Name>Bindings Library</_Name>
+    <Category>ios/library/unified</Category>
+    <Icon>md-ios-library-project</Icon>
+    <Image id="md-ios-library-project" />
+    <LanguageName>C#</LanguageName>
+    <_Description><![CDATA[Bind a native library or framework for use with Xamarin.iOS.]]></_Description>
+  </TemplateConfiguration>
+
+  <Actions>
+  </Actions>
+
+  <Combine name = "${ProjectName}" directory = ".">
+    <Options>
+      <StartupProject>${ProjectName}</StartupProject>
+    </Options>
+
+    <Project name = "${ProjectName}" directory = "." type = "XamarinIOSBinding">
+      <Options Target = "Library" TargetFrameworkVersion = "Xamarin.iOS,Version=v1.0" />
+      <References>
+        <Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+        <Reference type="Gac" refto="Xamarin.iOS" />
+      </References>
+      <Files>
+      	<File name="Properties/AssemblyInfo.cs" AddStandardHeader="True" src="AssemblyInfo.cs" BuildAction="Compile" />
+        <File name="ApiDefinition.cs" AddStandardHeader="True" src="ApiDefinition.cs" BuildAction="ObjcBindingApiDefinition" />
+        <File name="Structs.cs" AddStandardHeader="True" src="Structs.cs" BuildAction="ObjcBindingCoreSource" />
+      </Files>
+    </Project>
+  </Combine>
+</Template>

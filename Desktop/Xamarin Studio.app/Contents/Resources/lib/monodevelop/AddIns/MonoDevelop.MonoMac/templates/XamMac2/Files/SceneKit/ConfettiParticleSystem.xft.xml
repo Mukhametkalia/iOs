@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Confetti</_Name>
+		<Icon>file-scenekit</Icon>
+		<_Category>Mac SceneKit Particle Systems</_Category>
+		<LanguageName>*</LanguageName>
+		<ProjectType>XamMac2</ProjectType>
+		<DefaultFilename>ConfettiParticleSystem</DefaultFilename>
+		<_Description>Creates a confetti particle system.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+		<ParentProject RequireProject="True"/>
+	</Conditions>
+	
+	<TemplateFiles>
+		<RawFile name="${Name}.scnp" SuppressAutoOpen="True" src="ConfettiParticleSystem.scnp" />
+		<RawFile name="confetti.png" SuppressAutoOpen="True" src="confetti.png" />
+    </TemplateFiles>
+</Template>

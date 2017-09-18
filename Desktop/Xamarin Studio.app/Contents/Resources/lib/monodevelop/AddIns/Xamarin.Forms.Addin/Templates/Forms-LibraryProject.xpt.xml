@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Class Library</_Name>
+		<Category>multiplat/library/forms</Category>
+		<Icon>md-crossplatform-pcl-project</Icon>
+		<Image id="md-crossplatform-pcl-project" />
+		<LanguageName>C#</LanguageName>
+    <_Description>Creates Xamarin.Forms Library using PCL.</_Description>
+    <GroupId>xamarin-forms-project-library</GroupId>
+	</TemplateConfiguration>
+
+	<Actions>
+	</Actions>
+
+	<Combine name = "${ProjectName}" directory = ".">
+		<Actions>
+			<Open filename = "MyPage.cs"/>
+		</Actions>
+
+		<Project name = "${ProjectName}" directory = "." type = "C#PortableLibrary">
+			<Options Target = "Library" TargetFrameworkVersion = ".NETPortable,Version=v4.5,Profile=Profile259"/>
+			<Files>
+				<File name="MyPage.cs" AddStandardHeader="True" src="../Templates/Core/MyPage.cs" />
+				<FileTemplateReference TemplateID="CSharpAssemblyInfo" name="AssemblyInfo.cs" />
+			</Files>
+			<Packages>
+				<Package Id="Xamarin.Forms" Version="2.3.1.114" local="true" /> 
+			</Packages>
+		</Project>
+	</Combine>
+</Template>

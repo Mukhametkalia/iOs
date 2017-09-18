@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Intents UI Extension</_Name>
+		<Visibility>NewProject</Visibility>
+		<Category>ios/extension/general</Category>
+		<Icon>md-ios-intent-extension-project</Icon>
+		<Image id="md-ios-intent-extension-project" />
+		<Wizard>MonoDevelop.IPhone.ExtensionProjectTemplateWizard</Wizard>
+		<LanguageName>C#</LanguageName>
+		<_Description><![CDATA[Creates an Intents UI extension which lets you customize the Siri or Maps interface after an intent has been handled successfully.]]></_Description>
+	</TemplateConfiguration>
+
+	<Actions>
+		<Open filename = "IntentViewController.cs"/>
+	</Actions>
+
+	<Combine name = "${ProjectName}" directory = ".">
+		<Project name = "${ProjectName}" directory = "." type = "XamarinIOSAppExtension">
+			<Options Target = "Library" TargetFrameworkVersion = "Xamarin.iOS,Version=v1.0" />
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="Xamarin.iOS" />
+			</References>
+			<Files>
+				<Directory name="Resources"/>
+				<File name="Info.plist" AddStandardHeader="False" src="Info.plist.xml" />
+				<File name="Entitlements.plist" AddStandardHeader="False" src="../Common/Entitlements.plist.xml" />
+				<File name="MainInterface.storyboard" src="MainInterface.storyboard" />
+				<File name="IntentViewController.cs" AddStandardHeader="True" src="IntentViewController.cs" />
+				<File name="IntentViewController.designer.cs" AddStandardHeader="False" DependsOn="IntentViewController.cs" src="IntentViewController.designer.cs" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

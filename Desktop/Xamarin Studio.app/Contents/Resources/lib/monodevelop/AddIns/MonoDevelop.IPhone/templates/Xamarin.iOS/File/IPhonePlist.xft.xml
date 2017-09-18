@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Property List</_Name>
+		<_Category projectType="XamarinIOS">iOS</_Category>
+		<_Category projectType="XamarinIOSAppExtension">iOS</_Category>
+		<_Category projectType="XamarinIOSWatchApp">iOS</_Category>
+		<_Category projectType="TVOS">tvOS</_Category>
+		<_Category projectType="WatchOSApp">watchOS</_Category>
+		<_Category projectType="WatchOSAppExtension">watchOS</_Category>
+		<Icon>file-plist</Icon>
+		<LanguageName>*</LanguageName>
+		<DefaultFilename>PropertyList</DefaultFilename>
+		<ProjectType>XamarinIOS, XamarinIOSAppExtension, XamarinIOSWatchApp, TVOS, WatchOSApp, WatchOSAppExtension</ProjectType>
+		<_Description>An empty property list.</_Description>
+	</TemplateConfiguration>
+
+	<Conditions>
+		<ParentProject RequireProject="True"/>
+	</Conditions>
+	
+	<TemplateFiles>
+		<File DefaultExtension=".plist" SuppressAutoOpen="true">
+<![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+</dict>
+</plist>]]></File>
+	</TemplateFiles>
+</Template>

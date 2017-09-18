@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Smoke</_Name>
+		<Icon>file-scenekit</Icon>
+		<_Category>Mac SceneKit Particle Systems</_Category>
+		<LanguageName>*</LanguageName>
+		<ProjectType>XamMac2</ProjectType>
+		<DefaultFilename>SmokeParticleSystem</DefaultFilename>
+		<_Description>Creates a smoke particle system.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+		<ParentProject RequireProject="True"/>
+	</Conditions>
+	
+	<TemplateFiles>
+		<RawFile name="${Name}.scnp" SuppressAutoOpen="True" src="SmokeParticleSystem.scnp" />
+		<RawFile name="smoke.png" SuppressAutoOpen="True" src="smoke.png" />
+    </TemplateFiles>
+</Template>

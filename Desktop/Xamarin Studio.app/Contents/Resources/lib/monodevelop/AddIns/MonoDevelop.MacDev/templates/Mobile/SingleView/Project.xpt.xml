@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<Template originator="Vincent Dondain" created="2015/01/22">
+	<TemplateConfiguration>
+		<_Name>Single View App</_Name>
+		<Category>multiplat/app/native</Category>
+		<Icon>md-crossplatform-single-view-project</Icon>
+		<Image id="md-crossplatform-single-view-project" />
+		<LanguageName>C#</LanguageName>
+		<SupportedParameters>CrossPlatIdentifiers, TargetPlatform, SharedCode</SupportedParameters>
+		<DefaultParameters>ShowTestCloudOption=true,ShowInsightsOption=true</DefaultParameters>
+		<Wizard>Xamarin.Forms.ProjectTemplateWizard</Wizard>
+		<_Description><![CDATA[Creates a Single View app using a Shared Project or Portable Class Library Project for code sharing.
+
+This template also includes a basic test fixture and configuration for automated UI testing.
+
+Xamarin subscribers and trial users can run tests on over 1,000 devices on Xamarin Test Cloud.
+
+UI tests can also be run locally using connected devices and simulators.]]></_Description>
+	</TemplateConfiguration>
+	<Combine name="${ProjectName}" directory=".">
+		<Options>
+			<StartupProject>${ProjectName}.iOS</StartupProject>
+		</Options>
+		<Project name="${ProjectName}" directory="." type="SharedAssetsProject" if="CreateSharedAssetsProject">
+			<Files>
+				<FileTemplateReference TemplateID="EmptyClass" name="MyClass.cs" />
+			</Files>
+		</Project>
+		<Project name="${ProjectName}" directory="." type="C#PortableLibrary" if="CreatePortableDotNetProject">
+			<Options Target="Library" TargetFrameworkVersion=".NETPortable,Version=v4.5,Profile=Profile259" />
+			<Files>
+				<FileTemplateReference TemplateID="EmptyClass" name="MyClass.cs" />
+				<FileTemplateReference TemplateID="CSharpAssemblyInfo" name="AssemblyInfo.cs" />
+			</Files>
+		</Project>
+		<Project name="${ProjectName}.Droid" directory="./Droid" type="MonoDroid" if="CreateAndroidProject">
+			<Options
+				AndroidApplication="true"
+				AndroidManifest="Properties/AndroidManifest.xml"
+				AndroidResgenFile="Resources/Resource.designer.cs"
+				AndroidResgenClass="Resource" />
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="Mono.Android" />
+				<Reference type="Project" refto="${ProjectName}" />
+			</References>
+			<Packages>
+				<Package id="Xamarin.GooglePlayServices" version="19.0.0.1" if="UseGooglePlayServices" />
+				<Package id="Xamarin.Android.Support.v7.AppCompat" version="20.0.0.2" if="UseXamarinAndroidSupportv7AppCompat" />
+			</Packages>
+			<Files>
+				<File name="MainActivity.cs" src="AndroidApp/MainActivity.MacDev.cs" />
+				<Directory name="Resources">
+					<File name="Resource.designer.cs" src="AndroidApp/Resource.MacDev.cs" />
+					<RawFile name="AboutResources.txt" src="AndroidApp/AboutResources.MacDev.txt" />
+					<Directory name="layout">
+						<File name="Main.axml" src="AndroidApp/Main.MacDev.axml" />
+					</Directory>
+					<Directory name="values">
+						<File name="Strings.xml"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Click Me!</string>
+    <string name="app_name">${ProjectName}</string>
+</resources>]]></File>
+					</Directory>
+					<Directory name="mipmap-hdpi">
+						<RawFile name="Icon.png" src="AndroidApp/icon-hdpi.MacDev.png" />
+					</Directory>
+					<Directory name="mipmap-mdpi">
+						<RawFile name="Icon.png" src="AndroidApp/icon-mdpi.MacDev.png" />
+					</Directory>
+					<Directory name="mipmap-xhdpi">
+						<RawFile name="Icon.png" src="AndroidApp/icon-xhdpi.MacDev.png" />
+					</Directory>
+					<Directory name="mipmap-xxhdpi">
+						<RawFile name="Icon.png" src="AndroidApp/icon-xxhdpi.MacDev.png" />
+					</Directory>
+					<Directory name="mipmap-xxxhdpi">
+						<RawFile name="Icon.png" src="AndroidApp/icon-xxxhdpi.MacDev.png" />
+					</Directory>
+				</Directory>
+				<Directory name="Properties">
+					<File name="AssemblyInfo.cs" src="AndroidApp/AssemblyInfo.MacDev.cs" />
+					<File name="AndroidManifest.xml" src="AndroidManifest.xml" />
+				</Directory>
+				<Directory name="Assets">
+					<RawFile name="AboutAssets.txt" src="AndroidApp/AboutAssets.MacDev.txt" BuildAction="None" />
+				</Directory>
+			</Files>
+		</Project>
+		<Project name="${ProjectName}.iOS" directory="./iOS" type="XamarinIOS" if="CreateMonoTouchProject">
+			<Options TargetFrameworkVersion="Xamarin.iOS,Version=v1.0" DefineConstantsDebug="ENABLE_TEST_CLOUD" />
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="Xamarin.iOS" />
+				<Reference type="Project" refto="${ProjectName}" />
+			</References>
+			<Packages>
+				<Package ID="Xamarin.TestCloud.Agent" Version="0.19.0" if="CreateUITestProject" />
+			</Packages>
+			<Files>
+				<Directory name="Assets.xcassets">
+					<Directory name="AppIcon.appiconset">
+						<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../MacIOS/Common/AppIcons.json" />
+					</Directory>
+					<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../AssetCatalogs/Empty.json" />
+				</Directory>
+				<Directory name="Resources" />
+				<File name="LaunchScreen.storyboard" src="../../MacIOS/Common/LaunchScreen.storyboard" />
+				<File name="Info.plist" AddStandardHeader="False" src="../../MacIOS/Common/Info_iOS.plist.xml" />
+				<File name="Entitlements.plist" AddStandardHeader="False" src="../../MacIOS/Common/Entitlements.plist.xml" />
+				<File name="Main.cs" AddStandardHeader="True" src="../../MacIOS/Common/Main-iOS.cs" />
+				<File name="AppDelegate.cs" AddStandardHeader="True" src="../../MacIOS/Common/AppDelegate.IOS.MacDev.cs" />
+				<File name="Main.storyboard" src="IOSApp/Main.MacDev.storyboard" />
+				<File name="ViewController.cs" AddStandardHeader="True" src="IOSApp/ViewController.MacDev.cs" />
+				<File name="ViewController.designer.cs" AddStandardHeader="False" DependsOn="ViewController.cs" src="IOSApp/ViewController.MacDev.designer.cs" />
+			</Files>
+		</Project>
+		<Project name="${ProjectName}.UITests" directory="./UITests" if="CreateUITestProject">
+			<Options Target="Library" />
+			<References>
+				<Reference type="Package" refto="System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+				<Reference type="Project" refto="${ProjectName}.iOS" LocalCopy="false" ReferenceOutputAssembly="false" if="CreateMonoTouchProject" />
+				<Reference type="Project" refto="${ProjectName}.Droid" LocalCopy="false" ReferenceOutputAssembly="false" if="CreateAndroidProject" />
+			</References>
+			<Packages>
+				<Package ID="NUnit" Version="2.6.3" />
+				<Package ID="Xamarin.UITest" Version="1.3.7" />
+			</Packages>
+			<Files>
+				<File name="Tests.cs" src="UITest/UITests.MacDev.cs" />
+				<File name="AppInitializer.cs" src="UITest/AppInitializer.MacDev.cs" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

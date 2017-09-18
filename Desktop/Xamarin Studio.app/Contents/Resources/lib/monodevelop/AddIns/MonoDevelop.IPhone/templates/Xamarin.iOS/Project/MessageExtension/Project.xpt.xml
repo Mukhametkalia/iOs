@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>iMessage Extension</_Name>
+		<Visibility>NewProject</Visibility>
+		<Category>ios/extension/general</Category>
+		<Icon>md-ios-message-extension-project</Icon>
+		<Image id="md-ios-message-extension-project" />
+		<Wizard>MonoDevelop.IPhone.ExtensionProjectTemplateWizard</Wizard>
+		<LanguageName>C#</LanguageName>
+		<_Description><![CDATA[Creates an iMessage extension which lets you present a custom user interface within the Messages app.]]></_Description>
+	</TemplateConfiguration>
+
+	<Actions>
+		<Open filename = "MessagesViewController.cs"/>
+	</Actions>
+
+	<Combine name = "${ProjectName}" directory = ".">
+		<Project name = "${ProjectName}" directory = "." type = "XamarinIOSAppExtension">
+			<Options Target = "Library" TargetFrameworkVersion = "Xamarin.iOS,Version=v1.0" />
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="Xamarin.iOS" />
+			</References>
+			<Files>
+				<Directory name="Assets.xcassets">
+					<Directory name="iMessage App Icon.stickersiconset">
+						<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../File/StickersIconSet.json" />
+					</Directory>
+					<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../File/Empty.json" />
+				</Directory>
+				<Directory name="Resources"/>
+				<File name="Info.plist" AddStandardHeader="False" src="Info.plist.xml" />
+				<File name="Entitlements.plist" AddStandardHeader="False" src="../Common/Entitlements.plist.xml" />
+				<File name="MainInterface.storyboard" src="MainInterface.storyboard" />
+				<File name="MessagesViewController.cs" AddStandardHeader="True" src="MessagesViewController.cs" />
+				<File name="MessagesViewController.designer.cs" AddStandardHeader="False" DependsOn="MessagesViewController.cs" src="MessagesViewController.designer.cs" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

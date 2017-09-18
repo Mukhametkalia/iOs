@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Unit Test App</_Name>
+		<Category>ios/tests/unified</Category>
+		<Icon>md-ios-test-project</Icon>
+		<Image id="md-ios-test-project" />
+		<LanguageName>F#</LanguageName>
+		<GroupId>md-unit-tests-ios-unified</GroupId>
+		<Wizard>MonoDevelop.IPhone.ProjectTemplateWizard</Wizard>
+		<DefaultParameters>MinimumOSVersion=6.0</DefaultParameters>
+		<_Description><![CDATA[Creates a unit test project for Xamarin.iOS libraries and apps.]]></_Description>
+	</TemplateConfiguration>
+	<Actions>
+		<Open filename="UnitTestAppDelegate.fs" />
+	</Actions>
+	<Combine name="${ProjectName}" directory=".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		<Project name="${ProjectName}" directory="." type="XamarinIOS">
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="mscorlib" />
+				<Reference type="Gac" refto="FSharp.Core" />
+				<Reference type="Gac" refto="Xamarin.iOS" />
+				<Reference type="Gac" refto="MonoTouch.NUnitLite" />
+			</References>
+			<Files>
+				<FileTemplateReference TemplateID="LaunchScreen" name="LaunchScreen.storyboard" />
+				<File name="Info.plist" AddStandardHeader="False" src="../Info.plist.xml" />
+				<File name="Entitlements.plist" AddStandardHeader="False" src="../../Common/Entitlements.plist.xml" />
+				<UnformattedFile name="UnitTestAppDelegate.fs" AddStandardHeader="True" src="UnitTestAppDelegate.fs.txt" />
+				<UnformattedFile name="Main.fs" AddStandardHeader="True" src="Main.fs.txt" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<Template originator="Vincent Dondain" created="06/26/2015">
+	<TemplateConfiguration>
+		<_Name>SpriteKit Game</_Name>
+		<Category>multiplat/app/games</Category>
+		<Icon>md-crossplatform-spritekit-project</Icon>
+		<Image id="md-crossplatform-spritekit-project" />
+		<LanguageName>C#</LanguageName>
+		<Wizard>Xamarin.Forms.ProjectTemplateWizard</Wizard>
+		<_Description><![CDATA[Creates a game app for iOS and Mac using SpriteKit.]]></_Description>
+	</TemplateConfiguration>
+	<Actions>
+		<Open filename="../Shared/GameViewController.cs" />
+	</Actions>
+	<Combine name="${ProjectName}" directory=".">
+		<Options>
+			<StartupProject>${ProjectName}.Mac</StartupProject>
+		</Options>
+		<Project name="${ProjectName}.IOS" directory="./iOS" type="XamarinIOS">
+			<Options TargetFrameworkVersion="Xamarin.iOS,Version=v1.0" />
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="Xamarin.iOS" />
+				<Reference type="Project" refto="${ProjectName}" />
+			</References>
+			<Files>
+				<Directory name="Assets.xcassets">
+					<Directory name="AppIcon.appiconset">
+						<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../Common/AppIcons.json" />
+					</Directory>
+					<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../AssetCatalogs/Empty.json" />
+				</Directory>
+				<Directory name="Resources" />
+				<File name="LaunchScreen.storyboard" src="../Common/LaunchScreen.storyboard" />
+				<File name="Info.plist" AddStandardHeader="False" src="../Common/Info_iOS.plist.xml" />
+				<File name="Entitlements.plist" AddStandardHeader="False" src="../Common/Entitlements.plist.xml" />
+				<File name="Main.cs" AddStandardHeader="True" src="../Common/Main-iOS.cs" />
+				<File name="AppDelegate.cs" AddStandardHeader="True" src="../Common/AppDelegate.IOS.MacDev.cs" />
+				<RawFile name="Main.storyboard" src="IOS/Main.storyboard" />
+			</Files>
+		</Project>
+		<Project name="${ProjectName}.Mac" directory="./Mac" type="XamMac2">
+			<Options TargetFrameworkVersion="Xamarin.Mac,Version=v2.0" />
+			<References>
+				<Reference type="Gac" refto="System" />
+				<Reference type="Gac" refto="System.Core" />
+				<Reference type="Gac" refto="Xamarin.Mac" />
+				<Reference type="Project" refto="${ProjectName}" />
+			</References>
+			<Files>
+				<Directory name="Assets.xcassets">
+					<Directory name="AppIcon.appiconset">
+						<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../Common/AppIconsMac/AppIcons.json" />
+						<RawFile name="AppIcon-128.png" src="../Common/AppIconsMac/application-macos-128.png" />
+						<RawFile name="AppIcon-128@2x.png" src="../Common/AppIconsMac/application-macos-128@2x.png" />
+						<RawFile name="AppIcon-16.png" src="../Common/AppIconsMac/application-macos-16.png" />
+						<RawFile name="AppIcon-16@2x.png" src="../Common/AppIconsMac/application-macos-16@2x.png" />
+						<RawFile name="AppIcon-256.png" src="../Common/AppIconsMac/application-macos-256.png" />
+						<RawFile name="AppIcon-256@2x.png" src="../Common/AppIconsMac/application-macos-256@2x.png" />
+						<RawFile name="AppIcon-32.png" src="../Common/AppIconsMac/application-macos-32.png" />
+						<RawFile name="AppIcon-32@2x.png" src="../Common/AppIconsMac/application-macos-32@2x.png" />
+						<RawFile name="AppIcon-512.png" src="../Common/AppIconsMac/application-macos-512.png" />
+						<RawFile name="AppIcon-512@2x.png" src="../Common/AppIconsMac/application-macos-512@2x.png" />
+					</Directory>
+					<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../AssetCatalogs/Empty.json" />
+				</Directory>
+				<Directory name="Resources" />
+				<File name="AppDelegate.cs" src="../Common/AppDelegate.Mac.MacDev.cs" AddStandardHeader="True" />
+				<File name="Info.plist" AddStandardHeader="False" src="../Common/Info_Mac.plist.xml" />
+				<File name="Entitlements.plist" AddStandardHeader="False" src="../Common/Entitlements.plist.xml" />
+				<File name="MainMenu.xib" src="Mac/MainMenu.xib" DefaultExtension=".xib" SuppressAutoOpen="True" />
+				<File name="Main.cs" src="../Common/Main-Mac.cs" AddStandardHeader="True" />
+			</Files>
+		</Project>
+		<Project name="${ProjectName}" directory="./Shared" type="SharedAssetsProject">
+			<Files>
+				<Directory name="Resources">
+					<RawFile name="GameScene.sks" src="Shared/GameScene.sks" BuildAction="BundleResource" />
+					<RawFile name="Spaceship.png" src="Shared/Spaceship.png" BuildAction="BundleResource" />
+				</Directory>
+				<File name="GameViewController.cs" src="Shared/GameViewController.cs" AddStandardHeader="True" />
+				<File name="GameViewController.designer.cs" DependsOn="GameViewController.cs" src="Shared/GameViewController.designer.cs" AddStandardHeader="True" />
+				<File name="GameScene.cs" src="Shared/GameScene.cs" AddStandardHeader="True" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

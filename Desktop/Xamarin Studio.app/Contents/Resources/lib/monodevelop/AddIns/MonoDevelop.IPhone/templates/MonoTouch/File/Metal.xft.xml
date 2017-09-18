@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Metal File</_Name>
+		<_Category>iOS</_Category>
+		<Icon>md-class-file</Icon>
+		<LanguageName>*</LanguageName>
+		<ProjectType>MonoTouch</ProjectType>
+		<_Description>Creates a new metal file.</_Description>
+	</TemplateConfiguration>
+
+	<Conditions>
+		<ParentProject RequireProject="True"/>
+	</Conditions>
+	
+	<TemplateFiles>
+		<File Name="${Name}.metal" DefaultExtension=".metal" SuppressAutoOpen="false" AddStandardHeader="true">
+<![CDATA[#include <metal_stdlib>
+using namespace metal;
+
+]]></File>
+	</TemplateFiles>
+</Template>

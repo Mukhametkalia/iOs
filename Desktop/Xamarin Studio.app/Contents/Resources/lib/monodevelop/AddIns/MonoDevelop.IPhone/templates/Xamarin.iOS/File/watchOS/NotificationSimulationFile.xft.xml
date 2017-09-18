@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Notification Simulation File</_Name>
+		<Icon>file-notification</Icon>
+		<_Category projectType="WatchOSAppExtension">watchOS</_Category>
+		<_Category projectType="XamarinIOSAppExtension">iOS | Apple Watch</_Category>
+		<LanguageName>C#</LanguageName>
+		<DefaultFilename>NotificationPayload</DefaultFilename>
+		<ProjectType>WatchOSAppExtension, XamarinIOSAppExtension</ProjectType>
+		<_Description>Apple Push Notification Service payload in JSON format.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+		<ParentProject RequireProject="True"/>
+	</Conditions>
+	
+	<TemplateFiles>
+		<File name="${Name}.json" DefaultExtension=".json"><![CDATA[{
+    "aps": {
+        "alert": {
+            "body": "Test message",
+            "title": "Optional title"
+        },
+        "category": "myCategory"
+    },
+
+    "WatchKit Simulator Actions": [
+        {
+            "title": "First Button",
+            "identifier": "firstButtonAction"
+        }
+    ],
+
+    "customKey": "Use this file to define a testing payload for your notifications. The aps dictionary specifies the category, alert text and title. The WatchKit Simulator Actions array can provide info for one or more action buttons in addition to the standard Dismiss button. Any other top level keys are custom payload. If you have multiple such JSON files in your project, you'll be able to select them when choosing to debug the notification interface of your Watch App."
+}
+]]></File>
+	</TemplateFiles>
+</Template>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Today Extension Project</_Name>
+		<Visibility>NewProject</Visibility>
+		<Category>mac/extension/general</Category>
+		<Icon>md-macos-today-extension-project</Icon>
+		<Image id="md-macos-today-extension-project" />
+		<LanguageName>C#</LanguageName>
+		<GroupId>md-xamarin-mac-unified-today-extension-project</GroupId>
+		<_Description><![CDATA[This template creates a Today app extension.
+
+The Unified API supports both 32 and 64-bit platforms, unlike the Classic API which supports only 32-bit platforms. 
+
+The Unified API also removes namespace prefixes to allow better code sharing between Xamarin.Mac and Xamarin.iOS projects.]]></_Description>
+	</TemplateConfiguration>
+	
+	<Actions>
+		<Open filename = "TodayViewController.cs"/>
+	</Actions>
+	
+	<Combine name = "${ProjectName}" directory = ".">
+		<Project name = "${ProjectName}" directory = "." type = "XamMac2AppExtension">
+			<Options Target = "Library" TargetFrameworkVersion = "Xamarin.Mac,Version=v2.0" />
+			<References>
+				<Reference type="Gac" refto="System"/>
+				<Reference type="Gac" refto="System.Core"/>
+				<Reference type="Gac" refto="Xamarin.Mac"/>
+			</References>
+			<Files>
+				<Directory name="Resources"/>
+				<File name="Info.plist" AddStandardHeader="False" src="Info.plist.xml" />
+				<File name="TodayViewController.xib" src="TodayViewController.xib" />
+				<File name="TodayViewController.cs" AddStandardHeader="True" src="TodayViewController.cs" />
+				<File name="TodayViewController.designer.cs" AddStandardHeader="False" DependsOn="TodayViewController.cs" src="TodayViewController.designer.cs" />
+				<File name="Entitlements.plist" AddStandardHeader="False" src="Entitlements.plist.xml" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

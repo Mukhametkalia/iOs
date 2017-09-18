@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Empty User Interface</_Name>
+		<Icon>xib-template-empty</Icon>
+		<_Category projectType="XamarinIOS">iOS</_Category>
+		<_Category projectType="TVOS">tvOS</_Category>
+		<LanguageName>*</LanguageName>
+		<DefaultFilename>Empty</DefaultFilename>
+		<ProjectType>XamarinIOS, TVOS</ProjectType>
+		<_Description>An empty Interface Builder document for creating an interface.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+		<ParentProject RequireProject="True"/>
+	</Conditions>
+	
+	<TemplateFiles>
+		<File name="${Name}.xib" DefaultExtension=".xib" SuppressAutoOpen="True">
+<![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+$if$ ($ProjectType$ == XamarinIOS)
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+$endif$
+$if$ ($ProjectType$ == TVOS)
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="NO">
+$endif$
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+    </objects>
+</document>
+]]>
+		</File>
+	</TemplateFiles>
+</Template>

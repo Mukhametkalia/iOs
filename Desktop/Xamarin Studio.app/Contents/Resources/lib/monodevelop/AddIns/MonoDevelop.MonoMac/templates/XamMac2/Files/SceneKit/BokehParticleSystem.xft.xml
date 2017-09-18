@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Bokeh</_Name>
+		<Icon>file-scenekit</Icon>
+		<_Category>Mac SceneKit Particle Systems</_Category>
+		<LanguageName>*</LanguageName>
+		<ProjectType>XamMac2</ProjectType>
+		<DefaultFilename>BokehParticleSystem</DefaultFilename>
+		<_Description>Creates a bokeh particle system.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+		<ParentProject RequireProject="True"/>
+	</Conditions>
+	
+	<TemplateFiles>
+		<RawFile name="${Name}.scnp" SuppressAutoOpen="True" src="BokehParticleSystem.scnp" />
+		<RawFile name="bokeh.png" SuppressAutoOpen="True" src="bokeh.png" />
+    </TemplateFiles>
+</Template>

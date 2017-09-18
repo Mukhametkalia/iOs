@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>SpriteKit Game</_Name>
+		<Category>mac/app/games</Category>
+		<Icon>md-macos-spritekit-project</Icon>
+		<Image id="md-macos-spritekit-project" />
+		<LanguageName>C#</LanguageName>
+		<Wizard>MonoDevelop.MonoMac.ProjectTemplateWizard</Wizard>
+		<GroupId condition="Yosemite=false">md-spritekit-mac-unified</GroupId>
+		<_Description><![CDATA[A basic SpriteKit-based Game App that targets the new Unified API shared with Xamarin.iOS. Requires Xcode 6 or newer.
+
+The Unified API supports both 32 and 64-bit platforms, unlike the Classic API which supports only 32-bit platforms. 
+
+The Unified API also removes namespace prefixes to allow better code sharing between Xamarin.Mac and Xamarin.iOS projects.]]></_Description>
+	</TemplateConfiguration>
+	<Actions>
+		<Open filename="AppDelegate.cs" />
+	</Actions>
+	<Combine name="${ProjectName}" directory=".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		<Project name="${ProjectName}" directory="." type="XamMac2">
+			<Options TargetFrameworkVersion="Xamarin.Mac,Version=v2.0" />
+			<References>
+				<Reference type="Gac" refto="System" />
+				<Reference type="Gac" refto="System.Core" />
+				<Reference type="Gac" refto="Xamarin.Mac" />
+			</References>
+			<Files>
+				<Directory name="Assets.xcassets">
+					<Directory name="AppIcon.appiconset">
+						<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../AppIcons/AppIcons.json" />
+						<RawFile name="AppIcon-128.png" src="../../../AppIcons/application-macos-128.png" />
+						<RawFile name="AppIcon-128@2x.png" src="../../../AppIcons/application-macos-128@2x.png" />
+						<RawFile name="AppIcon-16.png" src="../../../AppIcons/application-macos-16.png" />
+						<RawFile name="AppIcon-16@2x.png" src="../../../AppIcons/application-macos-16@2x.png" />
+						<RawFile name="AppIcon-256.png" src="../../../AppIcons/application-macos-256.png" />
+						<RawFile name="AppIcon-256@2x.png" src="../../../AppIcons/application-macos-256@2x.png" />
+						<RawFile name="AppIcon-32.png" src="../../../AppIcons/application-macos-32.png" />
+						<RawFile name="AppIcon-32@2x.png" src="../../../AppIcons/application-macos-32@2x.png" />
+						<RawFile name="AppIcon-512.png" src="../../../AppIcons/application-macos-512.png" />
+						<RawFile name="AppIcon-512@2x.png" src="../../../AppIcons/application-macos-512@2x.png" />
+					</Directory>
+					<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../Files/AssetCatalogs/Empty.json" />
+				</Directory>
+				<Directory name="Resources" />
+				<RawFile name="Spaceship.png" src="Spaceship.png" />
+				<File name="Info.plist" AddStandardHeader="False" src="../Common/Info.plist.xml" />
+				<File name="Entitlements.plist" AddStandardHeader="False" src="../Common/Entitlements.plist.xml" />
+				<File name="Main.cs" src="../Common/Main.cs" AddStandardHeader="True" />
+				<File name="AppDelegate.cs" src="AppDelegate.cs" AddStandardHeader="True" />
+				<File name="AppDelegate.designer.cs" src="AppDelegate.designer.cs" DependsOn="AppDelegate.cs" ShowAutogenerationNotice="True" SuppressAutoOpen="True" />
+				<File name="GameScene.cs" src="GameScene.cs" AddStandardHeader="True" />
+				<File name="MainMenu.xib" src="MainMenu.xib" DefaultExtension=".xib" SuppressAutoOpen="True" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

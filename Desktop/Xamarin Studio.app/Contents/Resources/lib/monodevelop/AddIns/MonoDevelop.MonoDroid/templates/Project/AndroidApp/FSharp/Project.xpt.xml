@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Android App</_Name>
+		<Category>android/app/general</Category>
+		<Icon>md-android-project</Icon>
+		<Image id="md-android-project" />
+		<LanguageName>F#</LanguageName>
+		<Wizard>MonoDevelop.MonoDroid.ProjectTemplateWizard</Wizard>
+		<SupportedParameters>AppName,AppIdentifier,TargetPlatforms,Themes</SupportedParameters>
+		<_Description>Creates an Android App with an Activity.</_Description>
+		<GroupId>md-project-android</GroupId>
+	</TemplateConfiguration>
+	<Actions>
+		<Open filename="MainActivity.fs" />
+	</Actions>
+	<Combine name="${ProjectName}" directory=".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+			<OtherFlags>--noframework</OtherFlags>
+		</Options>
+		<Project name="${ProjectName}" directory="." type="MonoDroid">
+			<Options
+				AndroidApplication="true"
+				AndroidManifest="Properties/AndroidManifest.xml"
+				AndroidResgenFile="Resources/Resource.designer.fs"
+				AndroidResgenClass="Resource" />
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="mscorlib" />
+				<Reference type="Gac" refto="Mono.Android" />
+			</References>
+			<Packages>
+				<Package id="Xamarin.Android.Support.v7.AppCompat" version="23.1.1.0" if="UseXamarinAndroidSupportv7AppCompat" />
+				<Package Id="FSharp.Core" Version="4.0.0.1" local="true" /> 
+			</Packages>
+			<Files>
+				<Directory name="Resources">
+					<File name="Resource.designer.fs" src="../../Common/Resource.fs.txt" />
+					<RawFile name="AboutResources.txt" src="../../Common/AboutResources.txt" />
+					<Directory name="layout">
+						<File name="Main.axml" src="../Main.axml" />
+					</Directory>
+					<Directory name="values">
+						<File name="Strings.xml"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Click Me!</string>
+    <string name="app_name">${AppName}</string>
+</resources>]]></File>
+					</Directory>
+					<Directory name="mipmap-hdpi">
+						<RawFile name="Icon.png" src="../../Common/icon-hdpi.png" />
+					</Directory>
+					<Directory name="mipmap-mdpi">
+						<RawFile name="Icon.png" src="../../Common/icon-mdpi.png" />
+					</Directory>
+					<Directory name="mipmap-xhdpi">
+						<RawFile name="Icon.png" src="../../Common/icon-xhdpi.png" />
+					</Directory>
+					<Directory name="mipmap-xxhdpi">
+						<RawFile name="Icon.png" src="../../Common/icon-xxhdpi.png" />
+					</Directory>
+					<Directory name="mipmap-xxxhdpi">
+						<RawFile name="Icon.png" src="../../Common/icon-xxxhdpi.png" />
+					</Directory>
+				</Directory>
+				<Directory name="Properties">
+					<UnformattedFile name="AssemblyInfo.fs" src="../../Common/AssemblyInfo.fs.txt" />
+					<File name="AndroidManifest.xml" src="../../Common/AndroidManifest.xml" />
+				</Directory>
+				<Directory name="Assets">
+					<RawFile name="AboutAssets.txt" src="../../Common/AboutAssets.txt" />
+				</Directory>
+				<UnformattedFile name="MainActivity.fs" src="MainActivity.fs.txt" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

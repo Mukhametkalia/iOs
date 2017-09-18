@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Blank Android App</_Name>
+		<Category>android/app/general</Category>
+		<Icon>md-android-project</Icon>
+		<Image id="md-android-project" />
+		<LanguageName>C#</LanguageName>
+		<Wizard>MonoDevelop.MonoDroid.ProjectTemplateWizard</Wizard>
+		<SupportedParameters>AppName,AppIdentifier,TargetPlatforms,Themes</SupportedParameters>
+		<DefaultParameters>ShowTestCloudOption=true,ShowInsightsOption=true</DefaultParameters>
+		<GroupId>monodroid-blank-project</GroupId>
+		<_Description><![CDATA[Creates a Blank Android App with an Activity.
+
+This template also includes a basic test fixture and configuration for automated UI testing.
+
+Xamarin subscribers and trial users can run tests on over 1,000 devices on Xamarin Test Cloud.
+
+UI tests can also be run locally using connected devices and simulators.]]></_Description>
+	</TemplateConfiguration>
+	<Actions>
+		<Open filename="MainActivity.cs" />
+	</Actions>
+	<Combine name="${ProjectName}" directory=".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		<Project name="${ProjectName}" directory="." type="MonoDroid">
+			<Options
+				AndroidApplication="true"
+				AndroidManifest="Properties/AndroidManifest.xml"
+				AndroidResgenFile="Resources/Resource.designer.cs"
+				AndroidResgenClass="Resource" />
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="Mono.Android" />
+			</References>
+			<Packages>
+				<Package id="Xamarin.Android.Support.v7.AppCompat" version="20.0.0.2" if="UseXamarinAndroidSupportv7AppCompat" />
+			</Packages>
+			<Files>
+				<File name="MainActivity.cs" src="MainActivity.cs" />
+				<Directory name="Resources">
+					<File name="Resource.designer.cs" src="../Common/Resource.cs" />
+					<RawFile name="AboutResources.txt" src="../Common/AboutResources.txt" />
+					<Directory name="layout">
+						<File name="Main.axml" src="Main.axml" />
+					</Directory>
+					<Directory name="values">
+						<File name="Strings.xml"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">${AppName}</string>
+</resources>]]></File>
+					</Directory>
+					<Directory name="mipmap-hdpi">
+					</Directory>
+					<Directory name="mipmap-mdpi">
+					</Directory>
+					<Directory name="mipmap-xhdpi">
+					</Directory>
+					<Directory name="mipmap-xxhdpi">
+					</Directory>
+					<Directory name="mipmap-xxxhdpi">
+					</Directory>
+					<Directory name="drawable" />
+				</Directory>
+				<Directory name="Properties">
+					<File name="AssemblyInfo.cs" src="../Common/AssemblyInfo.cs" />
+					<File name="AndroidManifest.xml" src="AndroidManifest.xml" />
+				</Directory>
+				<Directory name="Assets">
+					<RawFile name="AboutAssets.txt" src="../Common/AboutAssets.txt" BuildAction="None" />
+				</Directory>
+			</Files>
+		</Project>
+
+		<Project name = "${ProjectName}.UITests" directory = "${ProjectName}.UITests" if = "UseTestCloud">
+			<Options Target = "Library" />
+			
+			<References>
+				<Reference type="Package" refto="System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+				<Reference type="Project" refto="${ProjectName}" LocalCopy = "false" ReferenceOutputAssembly = "false" />
+			</References>
+
+			<Packages>
+				<Package ID="NUnit" Version="2.6.3" />
+				<Package ID="Xamarin.UITest" Version="1.0.0" />
+			</Packages>
+
+			<Files>
+				<File name="Tests.cs" src="UITests.cs" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

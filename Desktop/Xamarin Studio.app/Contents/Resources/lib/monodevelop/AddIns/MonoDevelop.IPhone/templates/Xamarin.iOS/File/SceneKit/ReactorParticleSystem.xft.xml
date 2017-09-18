@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Reactor</_Name>
+		<Icon>file-scenekit</Icon>
+		<_Category>iOS SceneKit Particle Systems</_Category>
+		<LanguageName>*</LanguageName>
+		<ProjectType>XamarinIOS</ProjectType>
+		<DefaultFilename>ReactorParticleSystem</DefaultFilename>
+		<_Description>A reactor particle system.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+		<ParentProject RequireProject="True"/>
+	</Conditions>
+	
+	<TemplateFiles>
+		<RawFile name="${Name}.scnp" SuppressAutoOpen="True" src="ReactorParticleSystem.scnp" />
+		<RawFile name="spark.png" SuppressAutoOpen="True" src="spark.png" />
+    </TemplateFiles>
+</Template>

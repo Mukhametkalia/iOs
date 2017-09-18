@@ -1,0 +1,23 @@
+﻿<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Empty Stylesheet</_Name>
+		<Icon>md-text-file-icon</Icon>
+		<_Category>Android</_Category>
+		<LanguageName>CSS</LanguageName>
+		<ProjectType>MonoDroid</ProjectType>
+		<DefaultFilename>Stylesheet</DefaultFilename>
+		<_Description>Creates a Stylesheet for Hybrid Razor applications.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+	</Conditions>
+	
+	<TemplateFiles>
+		<File name="${Name}.css" BuildAction="AndroidAsset" ><![CDATA[
+input {
+	width:100%;
+}
+]]></File>
+	</TemplateFiles>
+</Template>

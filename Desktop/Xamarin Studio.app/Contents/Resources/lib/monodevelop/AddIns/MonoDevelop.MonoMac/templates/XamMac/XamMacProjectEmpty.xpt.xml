@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<Template originator="Michael Hutchinson" created="2010/06/07">
+	
+	<!-- Template Header -->
+	<TemplateConfiguration>
+		<_Name>Empty Project</_Name>
+		<Visibility>NewProject</Visibility>
+		<Category>mac/app/classic</Category>
+		<Icon>md-macos-project</Icon>
+		<Image id="md-macos-project" />
+		<LanguageName>C#</LanguageName>
+		<_Description>An empty Mac project.</_Description>
+		<GroupId>md-xamarin-mac-empty-project</GroupId>
+	</TemplateConfiguration>
+	
+	<!-- Actions -->
+	<Actions>
+		<Open filename = "Main.cs"/>
+	</Actions>
+	
+	<!-- Template Content -->
+	<Combine name = "${ProjectName}" directory = ".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		
+		<Project name = "${ProjectName}" directory = "." type = "XamMac">
+			<Options />
+			<References>
+				<Reference type="Gac" refto="System" />
+				<Reference type="Gac" refto="System.Xml" />
+				<Reference type="Gac" refto="System.Core" />
+				<Reference type="Gac" refto="System.Xml.Linq" />
+				<Reference type="Gac" refto="System.Drawing" />
+				<Reference type="Gac" refto="XamMac" SpecificVersion="false" />
+			</References>
+			<Files>
+				<Directory name="Resources" />
+				<FileTemplateReference TemplateID="XamMacApplicationManifest" />
+				<File name="Main.cs">
+<![CDATA[using System;
+using MonoMac.AppKit;
+
+
+namespace ${Namespace}
+{
+	static class MainClass
+	{
+		static void Main (string [] args)
+		{
+			NSApplication.Init ();
+
+			var application = NSApplication.SharedApplication;
+			application.Delegate = new AppDelegate ();
+			application.Run ();
+		}
+	}
+}
+]]></File>
+				<File name="AppDelegate.cs" >
+<![CDATA[using System;
+using MonoMac.Foundation;
+using MonoMac.AppKit;
+
+namespace ${Namespace}
+{
+	public partial class AppDelegate : NSApplicationDelegate
+	{
+		public AppDelegate ()
+		{
+		}
+
+		public override void DidFinishLaunching (NSNotification notification)
+		{
+			var menu = new NSMenu ();
+
+			var menuItem = new NSMenuItem ();
+			menu.AddItem (menuItem);
+
+			var appMenu = new NSMenu ();
+			var quitItem = new NSMenuItem ("Quit " + NSProcessInfo.ProcessInfo.ProcessName, "q", (s, e) => NSApplication.SharedApplication.Terminate (menu));
+			appMenu.AddItem (quitItem);
+
+			menuItem.Submenu = appMenu;
+			NSApplication.SharedApplication.MainMenu = menu;
+		}
+	}
+}
+]]></File>
+			</Files>
+		</Project>
+	</Combine>
+</Template>

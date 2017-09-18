@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Stars</_Name>
+		<Icon>file-scenekit</Icon>
+		<_Category>Mac SceneKit Particle Systems</_Category>
+		<LanguageName>*</LanguageName>
+		<ProjectType>XamMac2</ProjectType>
+		<DefaultFilename>StarsParticleSystem</DefaultFilename>
+		<_Description>Creates a stars particle system.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+		<ParentProject RequireProject="True"/>
+	</Conditions>
+	
+	<TemplateFiles>
+		<RawFile name="${Name}.scnp" SuppressAutoOpen="True" src="StarsParticleSystem.scnp" />
+		<RawFile name="star.png" SuppressAutoOpen="True" src="star.png" />
+    </TemplateFiles>
+</Template>

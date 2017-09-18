@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Class Library</_Name>
+		<Category>android/library/general</Category>
+		<Icon>md-android-library-project</Icon>
+		<Image id="md-android-library-project" />
+		<LanguageName>C#</LanguageName>
+		<_Description>Creates an Android library project.</_Description>
+		<GroupId>monodroid-library-project</GroupId>
+	</TemplateConfiguration>
+	<Combine name="${ProjectName}" directory=".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		<Project name="${ProjectName}" directory="." type="MonoDroid">
+			<Options Target="Library" AndroidResgenFile="Resources/Resource.designer.cs" AndroidResgenClass="Resource" />
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="Mono.Android" />
+			</References>
+			<Files>
+				<Directory name="Resources">
+					<File name="Resource.designer.cs" src="Common/Resource.cs" />
+					<RawFile name="AboutResources.txt" src="Common/AboutResources.txt" />
+					<Directory name="values">
+						<File name="Strings.xml"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="library_name">${ProjectName}</string>
+</resources>]]></File>
+					</Directory>
+				</Directory>
+				<Directory name="Properties">
+					<File name="AssemblyInfo.cs" src="Library/AssemblyInfo.cs" />
+				</Directory>
+			</Files>
+		</Project>
+	</Combine>
+</Template>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Smoke</_Name>
+		<Icon>file-spritekit</Icon>
+		<_Category>Mac SpriteKit Particle Effects</_Category>
+		<LanguageName>*</LanguageName>
+		<ProjectType>XamMac2</ProjectType>
+		<DefaultFilename>SmokeParticleEffect</DefaultFilename>
+		<_Description>Creates a smoke particle effect.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+		<ParentProject RequireProject="True"/>
+	</Conditions>
+	
+	<TemplateFiles>
+		<RawFile name="${Name}.sks" SuppressAutoOpen="True" src="SmokeParticleEffect.sks" />
+		<RawFile name="spark.png" SuppressAutoOpen="True" src="spark.png" />
+    </TemplateFiles>
+</Template>

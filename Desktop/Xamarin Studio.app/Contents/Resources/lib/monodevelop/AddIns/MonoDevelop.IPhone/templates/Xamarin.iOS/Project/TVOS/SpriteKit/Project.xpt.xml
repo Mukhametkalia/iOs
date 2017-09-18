@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>SpriteKit Game</_Name>
+		<Category>tvos/app/games</Category>
+		<Icon>md-tvos-spritekit-project</Icon>
+		<Image id="md-tvos-spritekit-project" />
+		<LanguageName>C#</LanguageName>
+		<Wizard>MonoDevelop.IPhone.TVOSProjectTemplateWizard</Wizard>
+		<DefaultParameters>MinimumOSVersion=9.0,ShowInsightsOption=true</DefaultParameters>
+		<_Description><![CDATA[Creates a game app using SpriteKit.]]></_Description>
+	</TemplateConfiguration>
+	<Actions>
+		<Open filename="AppDelegate.cs" />
+	</Actions>
+	<Combine name="${ProjectName}" directory=".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		<Project name="${ProjectName}" directory="." type="TVOS">
+<!--			<Options TargetFrameworkVersion="Xamarin.iOS,Version=v1.0" DefineConstantsDebug="ENABLE_TEST_CLOUD" />-->
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="Xamarin.TVOS" />
+			</References>
+<!--			<Packages>
+				<Package ID="Xamarin.TestCloud.Agent" Version="0.14.1" if="UseTestCloud" />
+			</Packages>-->
+			<Files>
+				<Directory name="Assets.xcassets">
+					<Directory name="App Icon &amp; Top Shelf Image.brandassets">
+						<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/BrandAssets.json" />
+						<Directory name="App Icon - Large.imagestack">
+							<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/ImageStack.json" />
+							<Directory name="Back.imagestacklayer">
+								<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/Empty.json" />
+								<Directory name="Content.imageset">
+									<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/ImageSet.json" />
+								</Directory>
+							</Directory>
+							<Directory name="Front.imagestacklayer">
+								<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/Empty.json" />
+								<Directory name="Content.imageset">
+									<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/ImageSet.json" />
+								</Directory>
+							</Directory>
+							<Directory name="Middle.imagestacklayer">
+								<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/Empty.json" />
+								<Directory name="Content.imageset">
+									<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/ImageSet.json" />
+								</Directory>
+							</Directory>
+						</Directory>
+
+						<Directory name="App Icon - Small.imagestack">
+							<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/ImageStack.json" />
+							<Directory name="Back.imagestacklayer">
+								<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/Empty.json" />
+								<Directory name="Content.imageset">
+									<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/ImageSet.json" />
+								</Directory>
+							</Directory>
+							<Directory name="Front.imagestacklayer">
+								<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/Empty.json" />
+								<Directory name="Content.imageset">
+									<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/ImageSet.json" />
+								</Directory>
+							</Directory>
+							<Directory name="Middle.imagestacklayer">
+								<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/Empty.json" />
+								<Directory name="Content.imageset">
+									<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/ImageSet.json" />
+								</Directory>
+							</Directory>
+						</Directory>
+
+						<Directory name="Top Shelf Image Wide.imageset">
+							<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/ImageSet.json" />
+						</Directory>
+
+						<Directory name="Top Shelf Image.imageset">
+							<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/ImageSet.json" />
+						</Directory>
+					</Directory>
+
+					<Directory name="Spaceship.imageset">
+						<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="Spaceship.imageset/ImageSet.json" />
+						<RawFile name="Spaceship.png" src="Spaceship.imageset/Spaceship.png" />
+					</Directory>
+
+					<Directory name="LaunchImages.launchimage">
+						<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/LaunchImages.json" />
+					</Directory>
+
+					<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../File/Empty.json" />
+				</Directory>
+				<Directory name="Resources" />
+				<RawFile name="GameScene.sks" src="GameScene.sks" />
+				<File name="Info.plist" AddStandardHeader="False" src="../../Common/Info_tvOS_Game.plist.xml" />
+				<File name="Entitlements.plist" AddStandardHeader="False" src="../../Common/Entitlements.plist.xml" />
+				<File name="Main.cs" AddStandardHeader="True" src="../../Common/Main.cs" />
+				<File name="AppDelegate.cs" AddStandardHeader="True" src="../../Common/AppDelegate.cs" />
+				<RawFile name="Main.storyboard" src="Main.storyboard" />
+				<File name="GameViewController.cs" AddStandardHeader="True" src="GameViewController.cs" />
+				<File name="GameViewController.designer.cs" AddStandardHeader="False" DependsOn="GameViewController.cs" src="GameViewController.designer.cs" />
+				<File name="GameScene.cs" AddStandardHeader="True" src="GameScene.cs" />
+			</Files>
+		</Project>
+<!--		<Project name = "${ProjectName}.UITests" directory = "${ProjectName}.UITests" if="UseTestCloud">
+			<Options Target = "Library" />
+			<References>
+				<Reference type="Package" refto="System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+				<Reference type="Project" refto="${ProjectName}" LocalCopy = "false" ReferenceOutputAssembly = "false" />
+			</References>
+			<Packages>
+				<Package ID="NUnit" Version="2.6.3" />
+				<Package ID="Xamarin.UITest" Version="1.0.0" />
+			</Packages>
+			<Files>
+				<File name="Tests.cs" src="UITests.cs" />
+			</Files>
+		</Project>-->
+	</Combine>
+</Template>

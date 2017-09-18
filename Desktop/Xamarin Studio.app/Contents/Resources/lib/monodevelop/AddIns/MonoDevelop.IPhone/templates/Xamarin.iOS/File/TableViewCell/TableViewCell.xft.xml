@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Table View Cell</_Name>
+		<Icon>xib-template-window</Icon>
+		<_Category>iOS</_Category>
+		<LanguageName>C#</LanguageName>
+		<DefaultFilename>MyTableViewCell</DefaultFilename>
+		<ProjectType>XamarinIOS</ProjectType>
+		<_Description>A custom class and an Interface Builder document for creating a Table View cell.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+		<PartialTypeSupport Requirement="Enabled" />
+	</Conditions>
+	
+	<TemplateFiles>
+		<File name="${Name}.xib" src="TableViewCell.xib" DefaultExtension=".xib" SuppressAutoOpen="True" />
+		<File name="${Name}.cs" src="TableViewCell.cs" AddStandardHeader="True" />
+		<File name="${Name}.designer.cs" src="TableViewCell.designer.cs" AddStandardHeader="False" SuppressAutoOpen="True" DependsOn="${Name}.cs" />
+	</TemplateFiles>
+</Template>

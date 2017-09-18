@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Single View App</_Name>
+		<Category>tvos/app/general</Category>
+		<Icon>md-tvos-single-view-project</Icon>
+		<Image id="md-tvos-single-view-project" />
+		<LanguageName>F#</LanguageName>
+		<Wizard>MonoDevelop.IPhone.TVOSProjectTemplateWizard</Wizard>
+		<GroupId>md-single-view-tvos</GroupId>
+		<DefaultParameters>MinimumOSVersion=9.0</DefaultParameters>
+		<_Description><![CDATA[Creates a single view app which offers a storyboard that contains the view and a view controller to manage it.]]></_Description>
+	</TemplateConfiguration>
+	<Actions>
+		<Open filename="AppDelegate.fs" />
+	</Actions>
+	<Combine name="${ProjectName}" directory=".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		<Project name="${ProjectName}" directory="." type="TVOS">
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="mscorlib" />
+				<Reference type="Gac" refto="FSharp.Core" />
+				<Reference type="Gac" refto="Xamarin.TVOS" />
+			</References>
+			<Files>
+				<Directory name="Assets.xcassets">
+					<Directory name="App Icon &amp; Top Shelf Image.brandassets">
+						<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../File/BrandAssets.json" />
+						<Directory name="App Icon - Large.imagestack">
+							<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../File/ImageStack.json" />
+							<Directory name="Back.imagestacklayer">
+								<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../File/Empty.json" />
+								<Directory name="Content.imageset">
+									<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../File/ImageSet.json" />
+								</Directory>
+							</Directory>
+							<Directory name="Front.imagestacklayer">
+								<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../File/Empty.json" />
+								<Directory name="Content.imageset">
+									<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../File/ImageSet.json" />
+								</Directory>
+							</Directory>
+							<Directory name="Middle.imagestacklayer">
+								<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../File/Empty.json" />
+								<Directory name="Content.imageset">
+									<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../File/ImageSet.json" />
+								</Directory>
+							</Directory>
+						</Directory>
+
+						<Directory name="App Icon - Small.imagestack">
+							<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../File/ImageStack.json" />
+							<Directory name="Back.imagestacklayer">
+								<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../File/Empty.json" />
+								<Directory name="Content.imageset">
+									<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../File/ImageSet.json" />
+								</Directory>
+							</Directory>
+							<Directory name="Front.imagestacklayer">
+								<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../File/Empty.json" />
+								<Directory name="Content.imageset">
+									<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../File/ImageSet.json" />
+								</Directory>
+							</Directory>
+							<Directory name="Middle.imagestacklayer">
+								<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../File/Empty.json" />
+								<Directory name="Content.imageset">
+									<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../File/ImageSet.json" />
+								</Directory>
+							</Directory>
+						</Directory>
+
+						<Directory name="Top Shelf Image Wide.imageset">
+							<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../File/ImageSet.json" />
+						</Directory>
+
+						<Directory name="Top Shelf Image.imageset">
+							<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../File/ImageSet.json" />
+						</Directory>
+					</Directory>
+
+					<Directory name="LaunchImages.launchimage">
+						<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../File/LaunchImages.json" />
+					</Directory>
+
+					<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../File/Empty.json" />
+				</Directory>
+				<Directory name="Resources" />
+				<File name="Info.plist" AddStandardHeader="False" src="../../../Common/Info_tvOS.plist.xml" />
+				<File name="Entitlements.plist" AddStandardHeader="False" src="../../../Common/Entitlements.plist.xml" />
+				<File name="Main.storyboard" src="../Main.storyboard" />
+				<File name="ViewController.fs" AddStandardHeader="True" src="ViewController.fs.txt" />
+				<File name="AppDelegate.fs" AddStandardHeader="True" src="../../../Common/AppDelegate.fs.txt" />
+				<File name="Main.fs" AddStandardHeader="True" src="../../../Common/Main.fs.txt" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

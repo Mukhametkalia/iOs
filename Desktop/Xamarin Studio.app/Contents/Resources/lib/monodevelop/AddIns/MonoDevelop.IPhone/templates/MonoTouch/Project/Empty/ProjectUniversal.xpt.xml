@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Empty Project</_Name>
+		<Category>ios/app/classic</Category>
+		<Icon>md-ios-project</Icon>
+		<Image id="md-ios-project" />
+		<LanguageName>C#</LanguageName>
+		<_Description>This template creates an empty app.</_Description>
+		<Wizard>MonoDevelop.IPhone.ProjectTemplateWizard</Wizard>
+		<GroupId condition="Device=Universal">md-empty-ios-classic</GroupId>
+		<DefaultParameters>MinimumOSVersion=6.0</DefaultParameters>
+	</TemplateConfiguration>
+	
+	<Actions>
+		<Open filename = "AppDelegate.cs"/>
+	</Actions>
+	
+	<Combine name = "${ProjectName}" directory = ".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		
+		<Project name = "${ProjectName}" directory = "." type = "MonoTouch">
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="monotouch" />
+			</References>
+			<Files>
+				<Directory name="Resources">
+					<RawFile name="Default-568h@2x.png" src="../Common/Default-568h.png" />
+				</Directory>
+				<File name="Info.plist" AddStandardHeader="False" src="../Common/Info_Universal.plist.xml" />
+				<File name="Entitlements.plist" AddStandardHeader="False" src="../Common/Entitlements.plist.xml" />
+				<File name="Main.cs" AddStandardHeader="True" src="../Common/Main.cs" />
+				<File name="AppDelegate.cs" AddStandardHeader="True" src="AppDelegate.cs" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

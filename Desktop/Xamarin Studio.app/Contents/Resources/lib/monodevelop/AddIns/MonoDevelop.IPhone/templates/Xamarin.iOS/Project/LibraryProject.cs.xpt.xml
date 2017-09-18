@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Class Library</_Name>
+		<Category>ios/library/unified</Category>
+		<Icon>md-ios-library-project</Icon>
+		<Image id="md-ios-library-project" />
+		<LanguageName>C#</LanguageName>
+		<GroupId>md-library-project-ios-unified</GroupId>
+		<_Description><![CDATA[Creates a Xamarin.iOS library project.]]></_Description>
+	</TemplateConfiguration>
+	<Actions>
+	</Actions>
+	<Combine name="${ProjectName}" directory=".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		<Project name="${ProjectName}" directory="." type="XamarinIOS">
+			<Options Target="Library" TargetFrameworkVersion="Xamarin.iOS,Version=v1.0" />
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="Xamarin.iOS" />
+			</References>
+			<Files>
+				<Directory name="Resources" />
+				<FileTemplateReference TemplateID="EmptyClass" name="MyClass.cs" />
+				<FileTemplateReference TemplateID="CSharpAssemblyInfo" name="AssemblyInfo.cs" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

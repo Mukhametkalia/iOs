@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Asset Catalog</_Name>
+		<Icon>file-asset</Icon>
+		<_Category projectType="XamarinIOS">iOS</_Category>
+		<_Category projectType="XamarinIOSAppExtension">iOS</_Category>
+		<_Category projectType="XamarinIOSWatchApp">iOS</_Category>
+		<_Category projectType="TVOS">tvOS</_Category>
+		<_Category projectType="WatchOSApp">watchOS</_Category>
+		<_Category projectType="WatchOSAppExtension">watchOS</_Category>
+		<LanguageName>*</LanguageName>
+		<ProjectType>XamarinIOS, XamarinIOSAppExtension, XamarinIOSWatchApp, TVOS, WatchOSApp, WatchOSAppExtension</ProjectType>
+		<DefaultFilename>Media</DefaultFilename>
+		<_Description>An empty asset catalog.</_Description>
+	</TemplateConfiguration>
+	<Conditions>
+		<ParentProject RequireProject="True" />
+	</Conditions>
+	<TemplateFiles>
+		<RawFile name="${Name}.xcassets/Contents.json" SuppressAutoOpen="True" BuildAction="ImageAsset" src="Empty.json" />
+	</TemplateFiles>
+</Template>

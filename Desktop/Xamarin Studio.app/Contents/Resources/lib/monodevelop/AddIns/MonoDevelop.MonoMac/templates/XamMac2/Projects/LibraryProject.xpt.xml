@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Class Library</_Name>
+		<Category>mac/library/unified</Category>
+		<Icon>md-macos-library-project</Icon>
+		<Image id="md-macos-library-project" />
+		<LanguageName>C#</LanguageName>
+		<GroupId>md-xamarin-mac-unified-library-project</GroupId>
+		<_Description><![CDATA[A basic Cocoa Mac library project with XIB support that targets the new Unified API shared with Xamarin.iOS. Requires Xcode 5 or newer.
+
+The Unified API supports both 32 and 64-bit platforms, unlike the Classic API which supports only 32-bit platforms. 
+
+The Unified API also removes namespace prefixes to allow better code sharing between Xamarin.Mac and Xamarin.iOS projects.]]></_Description>
+	</TemplateConfiguration>
+	<Actions>
+	</Actions>
+	<Combine name="${ProjectName}" directory=".">
+		<Project name="${ProjectName}" directory="." type="XamMac2">
+			<Options Target="Library" TargetFrameworkVersion="Xamarin.Mac,Version=v2.0" />
+			<References>
+				<Reference type="Gac" refto="System" />
+				<Reference type="Gac" refto="System.Core" />
+				<Reference type="Gac" refto="Xamarin.Mac" />
+			</References>
+			<Files>
+				<FileTemplateReference TemplateID="EmptyClass" name="MyClass.cs" />
+				<FileTemplateReference TemplateID="CSharpAssemblyInfo" name="AssemblyInfo.cs" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>iPhone Table View Cell</_Name>
+		<Icon>xib-template-view</Icon>
+		<_Category>iOS</_Category>
+		<LanguageName>C#</LanguageName>
+		<ProjectType>MonoTouch</ProjectType>
+		<_Description>A custom class and an Interface Builder document for creating an iPhone Table View cell.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+		<PartialTypeSupport Requirement="Enabled" />
+	</Conditions>
+	
+	<TemplateFiles>
+		<File name="${Name}.${LanguageExtension}">
+<![CDATA[
+using System;
+using System.Drawing;
+
+using MonoTouch.Foundation;
+using MonoTouch.UIKit;
+
+namespace ${Namespace}
+{
+	public partial class ${Name} : UITableViewCell
+	{
+		public static readonly UINib Nib = UINib.FromName ("${Name}", NSBundle.MainBundle);
+		public static readonly NSString Key = new NSString ("${Name}");
+		
+		public ${Name} (IntPtr handle) : base (handle)
+		{
+		}
+	}
+}
+]]>
+		</File>
+		<File name="${Name}.designer.cs"
+			AddStandardHeader="False"
+			SuppressAutoOpen="True"
+			DependsOn="${Name}.cs">
+<![CDATA[// WARNING
+//
+// This file has been generated automatically by MonoDevelop to store outlets and
+// actions made in the Xcode designer. If it is removed, they will be lost.
+// Manual changes to this file may not be handled correctly.
+//
+using MonoTouch.Foundation;
+
+namespace ${Namespace}
+{
+	[Register ("${Name}")]
+	partial class ${Name}
+	{
+		void ReleaseDesignerOutlets ()
+		{
+		}
+	}
+}]]>
+		</File>
+		<File name="${Name}.xib" DefaultExtension=".xib" SuppressAutoOpen="True">
+<![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" customClass="${Name}" id="cxk-wN-pdQ">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cxk-wN-pdQ" id="YTl-1W-gDM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </tableViewCellContentView>
+        </tableViewCell>
+    </objects>
+</document>
+]]>
+		</File>
+	</TemplateFiles>
+</Template>

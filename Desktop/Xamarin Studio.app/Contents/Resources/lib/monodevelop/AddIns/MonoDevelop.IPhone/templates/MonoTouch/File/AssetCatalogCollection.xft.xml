@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Asset Catalog</_Name>
+		<Icon>md-xml-file-icon</Icon>
+		<_Category>iOS</_Category>
+		<LanguageName>*</LanguageName>
+		<ProjectType>MonoTouch</ProjectType>
+		<DefaultFilename>Images</DefaultFilename>
+		<_Description>Creates an asset catalog for App icons and launch images.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+		<ParentProject RequireProject="True"/>
+	</Conditions>
+	
+	<TemplateFiles>
+		<RawFile name="${Name}.xcassets/AppIcon.appiconset/Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="AppIcons.json" />
+		<RawFile name="${Name}.xcassets/LaunchImage.launchimage/Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="LaunchImages.json" />
+    </TemplateFiles>
+</Template>

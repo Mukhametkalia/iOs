@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Template Originator="Michael Hutchinson" Created="2010/06/07">
+
+	<!-- Template Header -->
+	<TemplateConfiguration>
+		<_Name>View</_Name>
+		<Icon>xib-template-view</Icon>
+		<_Category>Mac</_Category>
+		<LanguageName>C#</LanguageName>
+		<DefaultFilename>View</DefaultFilename>
+		<ProjectType>XamMac2</ProjectType>
+		<_Description>A View for Xamarin.Mac.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+		<PartialTypeSupport Requirement="Enabled" />
+	</Conditions>
+	
+	<!-- Template Content -->
+	<TemplateFiles>
+		<File 
+			name="${Name}.cs"
+			src="View/View.cs" />
+		<File 
+			name="${Name}.designer.cs" 
+			src="View/View.designer.cs"
+			DependsOn="${Name}.cs"
+			ShowAutogenerationNotice="True" 
+			AddStandardHeader="False" 
+			SuppressAutoOpen="True" />
+		<File 
+			name="${Name}.xib" 
+			src="View/View.xib"
+			DefaultExtension=".xib" 
+			SuppressAutoOpen="True"/>
+	</TemplateFiles>
+</Template>
+
+
+

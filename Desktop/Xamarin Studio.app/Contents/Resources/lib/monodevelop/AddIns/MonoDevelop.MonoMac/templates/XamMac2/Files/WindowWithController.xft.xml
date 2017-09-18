@@ -1,0 +1,47 @@
+﻿<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Window Controller</_Name>
+		<Icon>xib-template-window</Icon>
+		<_Category>Mac</_Category>
+		<LanguageName>C#</LanguageName>
+		<DefaultFilename>Window</DefaultFilename>
+		<ProjectType>XamMac2</ProjectType>
+		<_Description>A Window with a Controller for Xamarin.Mac.</_Description>
+	</TemplateConfiguration>
+
+	<Conditions>
+		<PartialTypeSupport Requirement="Enabled"/>
+	</Conditions>
+
+	<TemplateFiles>
+		<File
+			name="${Name}.cs"
+			src="WindowWithController/Window.cs"
+		/>
+		<File
+			name="${Name}.designer.cs"
+			src="WindowWithController/Window.designer.cs"
+			DependsOn="${Name}.cs"
+			ShowAutogenerationNotice="True"
+			SuppressAutoOpen="True"
+		/>
+		<File
+			name="${Name}Controller.cs"
+			src="WindowWithController/WindowController.cs"
+		/>
+		<File
+			name="${Name}Controller.designer.cs"
+			src="WindowWithController/WindowController.designer.cs"
+			DependsOn="${Name}Controller.cs"
+			ShowAutogenerationNotice="True"
+			SuppressAutoOpen="True"
+		/>
+		<File
+			name="${Name}.xib"
+			src="WindowWithController/Window.xib"
+			DefaultExtension=".xib"
+			SuppressAutoOpen="True"
+		/>
+	</TemplateFiles>
+</Template>

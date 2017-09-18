@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Asset Catalog</_Name>
+		<Icon>file-asset</Icon>
+		<_Category>Mac</_Category>
+		<LanguageName>*</LanguageName>
+		<ProjectType>XamMac2</ProjectType>
+		<DefaultFilename>Media</DefaultFilename>
+		<_Description>An empty asset catalog.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+		<ParentProject RequireProject="True"/>
+	</Conditions>
+	
+	<TemplateFiles>
+		<RawFile name="${Name}.xcassets/Contents.json" SuppressAutoOpen="True" BuildAction="ImageAsset" src="Empty.json" />
+    </TemplateFiles>
+</Template>

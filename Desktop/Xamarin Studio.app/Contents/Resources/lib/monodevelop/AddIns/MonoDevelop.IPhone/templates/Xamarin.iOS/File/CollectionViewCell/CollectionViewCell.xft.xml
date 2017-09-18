@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Collection View Cell</_Name>
+		<Icon>xib-template-window</Icon>
+		<_Category>iOS</_Category>
+		<LanguageName>C#</LanguageName>
+		<DefaultFilename>MyCollectionViewCell</DefaultFilename>
+		<ProjectType>XamarinIOS</ProjectType>
+		<_Description>A custom class and an Interface Builder document for creating a Collection View Cell.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+		<PartialTypeSupport Requirement="Enabled" />
+	</Conditions>
+	
+	<TemplateFiles>
+		<File name="${Name}.xib" src="CollectionViewCell.xib" DefaultExtension=".xib" SuppressAutoOpen="True" />
+		<File name="${Name}.cs" src="CollectionViewCell.cs" AddStandardHeader="True" />
+		<File name="${Name}.designer.cs" src="CollectionViewCell.designer.cs" AddStandardHeader="False" SuppressAutoOpen="True" DependsOn="${Name}.cs" />
+	</TemplateFiles>
+</Template>

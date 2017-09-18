@@ -1,0 +1,60 @@
+﻿<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Cocoa App</_Name>
+		<Category>mac/app/general</Category>
+		<Icon>md-macos-project</Icon>
+		<Image id="md-macos-project" />
+		<LanguageName>F#</LanguageName>
+		<Wizard>MonoDevelop.MonoMac.ProjectTemplateWizard</Wizard>
+		<GroupId condition="Yosemite=false">md-xamarin-mac-unified-project</GroupId>
+		<_Description><![CDATA[A basic Cocoa Mac App with XIB support that targets the new Unified API shared with Xamarin.iOS. Requires Xcode 5 or newer.
+
+The Unified API supports both 32 and 64-bit platforms, unlike the Classic API which supports only 32-bit platforms. 
+
+The Unified API also removes namespace prefixes to allow better code sharing between Xamarin.Mac and Xamarin.iOS projects.]]></_Description>
+	</TemplateConfiguration>
+	<Actions>
+		<Open filename="AppDelegate.fs" />
+	</Actions>
+	<Combine name="${ProjectName}" directory=".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		<Project name="${ProjectName}" directory="." type="XamMac2">
+			<Options TargetFrameworkVersion="Xamarin.Mac,Version=v2.0" />
+			<References>
+				<Reference type="Gac" refto="System" />
+				<Reference type="Gac" refto="System.Core" />
+				<Reference type="Gac" refto="Xamarin.Mac" />
+				<Reference type="Gac" refto="mscorlib" />
+				<Reference type="Gac" refto="FSharp.Core" />
+			</References>
+			<Files>
+				<Directory name="Assets.xcassets">
+					<Directory name="AppIcon.appiconset">
+						<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../../AppIcons/AppIcons.json" />
+						<RawFile name="AppIcon-128.png" src="../../../../../AppIcons/application-macos-128.png" />
+						<RawFile name="AppIcon-128@2x.png" src="../../../../../AppIcons/application-macos-128@2x.png" />
+						<RawFile name="AppIcon-16.png" src="../../../../../AppIcons/application-macos-16.png" />
+						<RawFile name="AppIcon-16@2x.png" src="../../../../../AppIcons/application-macos-16@2x.png" />
+						<RawFile name="AppIcon-256.png" src="../../../../../AppIcons/application-macos-256.png" />
+						<RawFile name="AppIcon-256@2x.png" src="../../../../../AppIcons/application-macos-256@2x.png" />
+						<RawFile name="AppIcon-32.png" src="../../../../../AppIcons/application-macos-32.png" />
+						<RawFile name="AppIcon-32@2x.png" src="../../../../../AppIcons/application-macos-32@2x.png" />
+						<RawFile name="AppIcon-512.png" src="../../../../../AppIcons/application-macos-512.png" />
+						<RawFile name="AppIcon-512@2x.png" src="../../../../../AppIcons/application-macos-512@2x.png" />
+					</Directory>
+					<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../../../Files/AssetCatalogs/Empty.json" />
+				</Directory>
+				<Directory name="Resources" />
+				<File name="Info.plist" AddStandardHeader="False" src="../../../Common/Info.plist.xml" />
+				<File name="Entitlements.plist" AddStandardHeader="False" src="../../../Common/Entitlements.plist.xml" />
+				<File name="MainMenu.xib" src="../../C#/XIB/MainMenu.xib" DefaultExtension=".xib" SuppressAutoOpen="True" />
+				<FileTemplateReference TemplateID="FSharpXamMac2WindowWithController" name="MainWindow" />
+				<UnformattedFile name="AppDelegate.fs" src="AppDelegate.fs.txt" AddStandardHeader="True" />
+				<UnformattedFile name="Main.fs" src="../../../Common/Main.fs.txt" AddStandardHeader="True" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

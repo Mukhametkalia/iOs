@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Rain</_Name>
+		<Icon>file-scenekit</Icon>
+		<_Category>Mac SceneKit Particle Systems</_Category>
+		<LanguageName>*</LanguageName>
+		<ProjectType>XamMac2</ProjectType>
+		<DefaultFilename>RainParticleSystem</DefaultFilename>
+		<_Description>Creates a rain particle system.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+		<ParentProject RequireProject="True"/>
+	</Conditions>
+	
+	<TemplateFiles>
+		<RawFile name="${Name}.scnp" SuppressAutoOpen="True" src="RainParticleSystem.scnp" />
+		<RawFile name="spark.png" SuppressAutoOpen="True" src="spark.png" />
+    </TemplateFiles>
+</Template>

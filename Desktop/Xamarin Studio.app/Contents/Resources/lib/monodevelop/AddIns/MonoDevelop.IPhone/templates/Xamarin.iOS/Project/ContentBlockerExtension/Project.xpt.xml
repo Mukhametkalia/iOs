@@ -1,0 +1,36 @@
+﻿<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Content Blocker Extension</_Name>
+		<Visibility>NewProject</Visibility>
+		<Category>ios/extension/general</Category>
+		<Icon>md-ios-content-blocker-extension-project</Icon>
+		<Image id="md-ios-content-blocker-extension-project" />
+		<Wizard>MonoDevelop.IPhone.ExtensionProjectTemplateWizard</Wizard>
+		<LanguageName>C#</LanguageName>
+		<_Description><![CDATA[Creates a Safari Content Blocker extension which indicates to WebKit that your ad blocking app has updated its rules. (This extension and the app it is bundled with must be 64-bit only).]]></_Description>
+	</TemplateConfiguration>
+	
+	<Actions>
+		<Open filename = "ActionRequestHandler.cs"/>
+	</Actions>
+	
+	<Combine name = "${ProjectName}" directory = ".">
+		<Project name = "${ProjectName}" directory = "." type = "XamarinIOSAppExtension">
+			<Options Target = "Library" TargetFrameworkVersion = "Xamarin.iOS,Version=v1.0" />
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="Xamarin.iOS" />
+			</References>
+			<Files>
+				<Directory name="Resources"/>
+				<File name="Info.plist" AddStandardHeader="False" src="Info.plist.xml" />
+				<File name="Entitlements.plist" AddStandardHeader="False" src="../Common/Entitlements.plist.xml" />
+				<File name="ActionRequestHandler.cs" AddStandardHeader="True" src="ActionRequestHandler.cs" />
+				<File name="blockerList.json" AddStandardHeader="False" src="blockerList.json" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

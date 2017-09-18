@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MacPlatform</name>
+    </assembly>
+    <members>
+        <member name="P:MonoDevelop.MacInterop.AppleEvents.Native.AEReturnID.AutoGenerate">
+            <summary>Make AECreateAppleEvent create session-unique value for returnID</summary>
+            </member>
+        <member name="P:MonoDevelop.MacInterop.AppleEvents.Native.AETransactionID.Any">
+             <summary>Not using transactions</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AEDescriptorType.Utf16ExternalRepresentation">
+            <summary>Big-endian UTF-16 with optional BOM, or little-endian UTF16 with required BOM</summary>
+            <remarks>No length byte or null termination</remarks>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AEDescriptorType.Utf8Text">
+             <summary>UTF8</summary>
+            <remarks>No length byte or null termination</remarks>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AEDescriptorType.Alias">
+             <summary>AliasPtr, from a valid AliasHandle</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AEDescriptorType.Type">
+             <summary>OSType</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AEDescriptorType.FileURL">
+             <summary>UTF8-encoded full path with native path separators</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AEDescriptorType.BookmarkData">
+             <summary>Bytes of a CFURLBookmarkData</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AEDescriptorType.Keyword">
+             <summary>OSType</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AEDescriptorType.ApplSignature">
+             <summary>OSType</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AEDescriptorType.Null">
+             <summary>Null or nonexistent data</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AEAttribute.Timeout">
+            <summary>AEDescriptorType.SInt32</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AEAttribute.InteractLevel">
+            <summary>Read-only, set in AESend</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AEAttribute.EventSource">
+            <summary>Read-only, AEDescriptorType.SInt16</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AEAttribute.MissedKeyword">
+            <summary>Read-only</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AEAttribute.ReplyRequested">
+            <summary>Whether reply was requested, Boolean</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AEAttribute.SenderEuid">
+            <summary>Read-only, AEDescriptorType.SInt32</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AEAttribute.SenderEgid">
+            <summary>Read-only, AEDescriptorType.SInt32</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AEAttribute.SenderUid">
+            <summary>Read-only, AEDescriptorType.SInt32</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AEAttribute.SenderGid">
+            <summary>Read-only, AEDescriptorType.SInt32</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AEAttribute.SenderPid">
+            <summary>Read-only, AEDescriptorType.SInt32</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AESendPriority.Normal">
+             <summary>Post message at end of event queue</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AESendPriority.High">
+             <summary>Post message at front of event queue</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AESendMode.NoReply">
+             <summary>Sender doesn't want reply</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AESendMode.QueueReply">
+             <summary>Sender wants reply but won't wait</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AESendMode.WaitReply">
+             <summary>Sender wants reply and will wait</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AESendMode.DontReconnect">
+             <summary>Don't reconnect on sessClosedErr</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AESendMode.WantReceipt">
+             <summary>Sender wants receipt</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AESendMode.NeverInteract">
+             <summary>Server shouldn't interact with user</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AESendMode.CanInteract">
+             <summary>Server may interact with user</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AESendMode.AlwaysInteract">
+             <summary>Server should interact with user if appropriate</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AESendMode.CanSwitchLayer">
+             <summary></summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AESendMode.DontRecord">
+             <summary></summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AESendMode.DontExecute">
+             <summary></summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AESendMode.ProcessNonReplyEvents">
+             <summary>Allow processing other events while waiting for reply</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AESendMode.DoNotAutomaticallyAddAnnotationsToEvent">
+             <summary></summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AppleEventTimeout.Default">
+             <summary>The default timeout of the Event Manager</summary>
+            </member>
+        <member name="F:MonoDevelop.MacInterop.AppleEvents.Native.AppleEventTimeout.NoTimeOut">
+             <summary>Wait indefinitely</summary>
+            </member>
+    </members>
+</doc>

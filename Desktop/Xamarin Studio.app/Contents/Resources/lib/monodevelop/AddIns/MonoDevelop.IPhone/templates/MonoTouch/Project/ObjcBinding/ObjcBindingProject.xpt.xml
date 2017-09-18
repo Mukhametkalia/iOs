@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Template>
+  <TemplateConfiguration>
+    <_Name>Binding Project</_Name>
+    <Category>ios/library/classic</Category>
+    <Icon>md-ios-library-project</Icon>
+    <Image id="md-ios-library-project" />
+    <LanguageName>C#</LanguageName>
+    <_Description>Creates a binding to a native iOS library.</_Description>
+  </TemplateConfiguration>
+
+  <Actions>
+  </Actions>
+
+  <Combine name = "${ProjectName}" directory = ".">
+    <Options>
+      <StartupProject>${ProjectName}</StartupProject>
+    </Options>
+
+    <Project name = "${ProjectName}" directory = "." type = "MonoTouchBinding">
+      <Options Target = "Library" TargetFrameworkVersion = "MonoTouch,Version=v1.0" />
+      <References>
+        <Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+        <Reference type="Gac" refto="monotouch" />
+      </References>
+      <Files>
+      	<Directory name="Resources" />
+        <File name="ApiDefinition.cs" AddStandardHeader="True" src="ApiDefinition.cs" BuildAction="ObjcBindingApiDefinition" />
+        <File name="StructsAndEnums.cs" AddStandardHeader="True" src="StructsAndEnums.cs" BuildAction="ObjcBindingCoreSource" />
+      </Files>
+    </Project>
+  </Combine>
+</Template>

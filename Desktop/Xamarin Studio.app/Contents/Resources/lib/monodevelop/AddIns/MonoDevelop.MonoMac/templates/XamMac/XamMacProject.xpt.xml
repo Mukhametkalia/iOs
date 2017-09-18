@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<Template originator="Michael Hutchinson" created="2010/06/05">
+	<!-- Template Header -->
+	<TemplateConfiguration>
+		<_Name>Cocoa App</_Name>
+		<Visibility>NewProject</Visibility>
+		<Category>mac/app/classic</Category>
+		<Icon>md-macos-project</Icon>
+		<Image id="md-macos-project" />
+		<LanguageName>C#</LanguageName>
+		<_Description>A basic Cocoa Mac App.</_Description>
+		<GroupId>md-xamarin-mac-project</GroupId>
+	</TemplateConfiguration>
+	<!-- Actions -->
+	<Actions>
+		<Open filename="Main.cs" />
+	</Actions>
+	<!-- Template Content -->
+	<Combine name="${ProjectName}" directory=".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		<Project name="${ProjectName}" directory="." type="XamMac">
+			<Options />
+			<References>
+				<Reference type="Gac" refto="System" />
+				<Reference type="Gac" refto="System.Xml" />
+				<Reference type="Gac" refto="System.Core" />
+				<Reference type="Gac" refto="System.Xml.Linq" />
+				<Reference type="Gac" refto="System.Drawing" />
+				<Reference type="Gac" refto="XamMac" SpecificVersion="false" />
+			</References>
+			<Files>
+				<Directory name="Resources" />
+				<FileTemplateReference TemplateID="XamMacWindowWithControllerXib" name="MainWindow" />
+				<FileTemplateReference TemplateID="XamMacApplicationManifest" />
+				<File name="MainMenu.xib" src="MainMenu.xib" DefaultExtension=".xib" SuppressAutoOpen="True"/>
+				<File name="Main.cs"><![CDATA[using System;
+using System.Drawing;
+using MonoMac.Foundation;
+using MonoMac.AppKit;
+using MonoMac.ObjCRuntime;
+
+namespace ${Namespace}
+{
+	class MainClass
+	{
+		static void Main (string [] args)
+		{
+			NSApplication.Init ();
+			NSApplication.Main (args);
+		}
+	}
+}	
+]]></File>
+				<File name="AppDelegate.cs"><![CDATA[using System;
+using System.Drawing;
+using MonoMac.Foundation;
+using MonoMac.AppKit;
+using MonoMac.ObjCRuntime;
+
+namespace ${Namespace}
+{
+	public partial class AppDelegate : NSApplicationDelegate
+	{
+		MainWindowController mainWindowController;
+		
+		public AppDelegate ()
+		{
+		}
+
+		public override void DidFinishLaunching (NSNotification notification)
+		{
+			mainWindowController = new MainWindowController ();
+			mainWindowController.Window.MakeKeyAndOrderFront (this);
+		}
+	}
+}
+]]></File>
+				<File name="AppDelegate.designer.cs" DependsOn="AppDelegate.cs" ShowAutogenerationNotice="True" AddStandardHeader="False" SuppressAutoOpen="True"><![CDATA[
+namespace ${Namespace}
+{
+	// Should subclass MonoMac.AppKit.NSResponder
+	[MonoMac.Foundation.Register("AppDelegate")]
+	public partial class AppDelegate
+	{
+	}
+}
+]]></File>
+			</Files>
+		</Project>
+	</Combine>
+</Template>

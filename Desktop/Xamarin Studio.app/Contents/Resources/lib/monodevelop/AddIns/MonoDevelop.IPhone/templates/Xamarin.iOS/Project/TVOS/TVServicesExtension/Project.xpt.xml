@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>TV Services Extension</_Name>
+		<Visibility>NewProject</Visibility>
+		<Category>tvos/extension/general</Category>
+		<Icon>md-tvos-tvservices-extension-project</Icon>
+		<Image id="md-tvos-tvservices-extension-project" />
+		<Wizard>MonoDevelop.IPhone.ExtensionProjectTemplateWizard</Wizard>
+		<SupportedParameters>tvOS</SupportedParameters>
+		<LanguageName>C#</LanguageName>
+		<_Description><![CDATA[Creates a TV Services extension which can display items in the Top Shelf area of the Apple TV main menu.]]></_Description>
+	</TemplateConfiguration>
+	<Actions>
+		<Open filename="ServiceProvider.cs" />
+	</Actions>
+	<Combine name="${ProjectName}" directory=".">
+		<Project name="${ProjectName}" directory="." type="TVOSAppExtension">
+			<Options Target="Library" TargetFrameworkVersion="Xamarin.TVOS,Version=v1.0" />
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="Xamarin.TVOS" />
+			</References>
+			<Files>
+				<Directory name="Resources" />
+				<File name="Info.plist" AddStandardHeader="False" src="Info.plist.xml" />
+				<File name="Entitlements.plist" AddStandardHeader="False" src="../../Common/Entitlements.plist.xml" />
+				<File name="ServiceProvider.cs" AddStandardHeader="True" src="ServiceProvider.cs" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

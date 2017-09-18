@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Storyboard</_Name>
+		<_Category projectType="XamarinIOS">iOS</_Category>
+		<_Category projectType="XamarinIOSWatchApp">iOS | Apple Watch</_Category>
+		<_Category projectType="TVOS">tvOS</_Category>
+		<_Category projectType="WatchOSApp">watchOS</_Category>
+		<Icon>file-storyboard</Icon>
+		<LanguageName>*</LanguageName>
+		<DefaultFilename>Storyboard</DefaultFilename>
+		<ProjectType>XamarinIOS, XamarinIOSWatchApp, TVOS, WatchOSApp</ProjectType>
+		<_Description>An empty Interface Builder Storyboard document for an interface.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+		<ParentProject RequireProject="True"/>
+	</Conditions>
+	
+	<TemplateFiles>
+		<File name="${Name}.storyboard" DefaultExtension=".storyboard" SuppressAutoOpen="True">
+<![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+$if$ ($ProjectType$ == XamarinIOS)
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+$endif$
+$if$ ($ProjectType$ == TVOS)
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="NO">
+$endif$
+$if$ ($ProjectType$ == WatchOSApp)
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="14A343f" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+$endif$
+$if$ ($ProjectType$ == XamarinIOSWatchApp)
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="14A343f" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+$endif$
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+    </dependencies>
+    <scenes/>
+</document>]]></File>
+	</TemplateFiles>
+</Template>

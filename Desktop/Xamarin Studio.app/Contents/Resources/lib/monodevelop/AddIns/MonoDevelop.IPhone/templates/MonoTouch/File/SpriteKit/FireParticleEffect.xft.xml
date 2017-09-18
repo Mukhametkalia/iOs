@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Fire</_Name>
+		<Icon>xib-template-view</Icon>
+		<_Category>iOS SpriteKit Particle Effects</_Category>
+		<LanguageName>*</LanguageName>
+		<ProjectType>MonoTouch</ProjectType>
+		<DefaultFilename>FireParticleEffect</DefaultFilename>
+		<_Description>Creates a fire particle effect.</_Description>
+	</TemplateConfiguration>
+	
+	<Conditions>
+		<ParentProject RequireProject="True"/>
+	</Conditions>
+	
+	<TemplateFiles>
+		<RawFile name="${Name}.sks" SuppressAutoOpen="True" src="FireParticleEffect.sks" />
+		<RawFile name="spark.png" SuppressAutoOpen="True" src="spark.png" />
+    </TemplateFiles>
+</Template>

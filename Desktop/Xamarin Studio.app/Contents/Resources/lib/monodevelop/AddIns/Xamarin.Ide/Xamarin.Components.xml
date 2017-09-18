@@ -1,0 +1,1545 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Xamarin.Components</name>
+    </assembly>
+    <members>
+        <member name="T:Xamarin.Components.Packaging.InvalidPackageException">
+             <summary>
+             Invalid package exception.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.InvalidPackageException.#ctor(System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Xamarin.Components.Packaging.InvalidPackageException" /> class.
+             </summary>
+             <param name="message">Message.</param>
+            </member>
+        <member name="T:Xamarin.Components.Packaging.InvalidManifestException">
+             <summary>
+             Invalid manifest exception.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.InvalidManifestException.#ctor(System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Xamarin.Components.Packaging.InvalidManifestException" /> class.
+             </summary>
+             <param name="message">Message.</param>
+            </member>
+        <member name="T:Xamarin.Components.Packaging.ComponentIcon">
+             <summary>
+             Represents a component icon read from a package.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentIcon.ZipFilePath">
+             <summary>
+             Gets or sets the path to this icon inside the package ZIP file.
+             </summary>
+             <value>The path to this icon inside the package ZIP file.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentIcon.Size">
+             <summary>
+             Gets or sets the icon size.
+             </summary>
+             <value>The icon size.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentIcon.Retina">
+             <summary>
+             Gets or sets a value indicating whether this <see cref="T:Xamarin.Components.Packaging.ComponentIcon" /> is a retina version of a smaller icon.
+             </summary>
+             <value><c>true</c> if this icon is a retina version of a smaller icon; otherwise, <c>false</c>.</value>
+            </member>
+        <member name="T:Xamarin.Components.ComponentTarget">
+             <summary>
+             Component targets
+             </summary>
+            </member>
+        <member name="F:Xamarin.Components.ComponentTarget.iOS">
+             <summary>
+             iOS
+             </summary>
+            </member>
+        <member name="F:Xamarin.Components.ComponentTarget.Android">
+             <summary>
+             Android
+             </summary>
+            </member>
+        <member name="F:Xamarin.Components.ComponentTarget.Mobile">
+             <summary>
+             Mobile (subset of iOS, Android, and Windows Phone)
+             </summary>
+            </member>
+        <member name="F:Xamarin.Components.ComponentTarget.WinPhone_7_0">
+             <summary>
+             Windows Phone 7.0
+             </summary>
+            </member>
+        <member name="F:Xamarin.Components.ComponentTarget.WinPhone_7_1">
+             <summary>
+             Windows Phone 7.1
+             </summary>
+            </member>
+        <member name="F:Xamarin.Components.ComponentTarget.WinPhone_8_0">
+             <summary>
+             Windows Phone 8.0
+             </summary>
+            </member>
+        <member name="F:Xamarin.Components.ComponentTarget.WinPhone_8_1">
+             <summary>
+             Windows Phone 8.1
+             </summary>
+            </member>
+        <member name="F:Xamarin.Components.ComponentTarget.WinPhoneApp_8_1">
+             <summary>
+             Windows Phone App 8.1
+             </summary>
+            </member>
+        <member name="F:Xamarin.Components.ComponentTarget.iOS_Unified">
+             <summary>
+             iOS Unified API
+             </summary>
+            </member>
+        <member name="F:Xamarin.Components.ComponentTarget.Mac_Unified">
+             <summary>
+             Mac Unified API
+             </summary>
+            </member>
+        <member name="F:Xamarin.Components.ComponentTarget.tvOS">
+             <summary>
+             tvOS
+             </summary>
+            </member>
+        <member name="F:Xamarin.Components.ComponentTarget.WatchOS">
+             <summary>
+             Watch OS
+             </summary>
+            </member>
+        <member name="F:Xamarin.Components.ComponentTarget.WinStore_8_0">
+             <summary>
+             Windows 8
+             </summary>
+            </member>
+        <member name="F:Xamarin.Components.ComponentTarget.WinUniversal_10_0">
+             <summary>
+             Windows Universal 10
+             </summary>
+            </member>
+        <member name="T:Xamarin.Components.ComponentTargetUtility">
+             <summary>
+             Component target manipulation utility.
+             </summary>
+            </member>
+        <member name="F:Xamarin.Components.ComponentTargetUtility.targets">
+             <summary>
+             Holds a mapping of framework string -&gt; target.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.ComponentTargetUtility.FromDirectoryName(System.String)">
+             <summary>
+             Gets a component target value from a directory name.
+             </summary>
+             <returns>The component target, or <c>null</c> if a target could not be determined.</returns>
+             <param name="directoryName">The directory name.</param>
+            </member>
+        <member name="M:Xamarin.Components.ComponentTargetUtility.ToDirectoryName(Xamarin.Components.ComponentTarget)">
+             <summary>
+             Gets the framework directory name that corresponds to a target.
+             </summary>
+             <returns>The directory name, or <c>null</c> if no match was found.</returns>
+             <param name="target">The target framework.</param>
+            </member>
+        <member name="M:Xamarin.Components.ComponentTargetUtility.GetTargetsFromMoniker(System.String)">
+             <summary>
+             Gets the set of targets that match the given framework moniker.
+             </summary>
+             <returns>The set of targets that match the given framework moniker.</returns>
+             <param name="moniker">The framework moniker.</param>
+            </member>
+        <member name="T:Xamarin.Components.Packaging.ComponentScreenshot">
+             <summary>
+             Represents a component screenshot.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentScreenshot.FromElement(System.Xml.Linq.XElement)">
+             <summary>
+             Loads a screenshot instance from an XML element
+             </summary>
+             <returns>The component screenshot instance.</returns>
+             <param name="el">The XML element.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentScreenshot.#ctor(System.String,System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Xamarin.Components.Packaging.ComponentScreenshot" /> class.
+             </summary>
+             <param name="source">The image source.</param>
+             <param name="title">The image title.</param>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentScreenshot.Src">
+             <summary>
+             The source as a relative Unix path within the component directory.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentScreenshot.Title">
+             <summary>
+             The title.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentScreenshot.GetFilePath(System.Boolean)">
+             <summary>
+             Gets the file path inside the package.
+             </summary>
+             <returns>The file path inside the package.</returns>
+             <param name="retina">If set to <c>true</c>, return the path to the retina version.</param>
+            </member>
+        <member name="T:Xamarin.Components.Packaging.ComponentSample">
+             <summary>
+             A sample included with a response.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentSample.Trim(System.String)">
+             <summary>
+             Trim the specified value, if it's not null.
+             </summary>
+             <returns>The trimmed value, or null if the original value was null.</returns>
+             <param name="value">The value to trim.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentSample.FromElement(System.Xml.Linq.XElement)">
+             <summary>
+             Creates a new sample instance from an XML element.
+             </summary>
+             <returns>The sample description.</returns>
+             <param name="el">The XML element.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentSample.#ctor(System.String,System.String,System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Xamarin.Components.Packaging.ComponentSample" /> class.
+             </summary>
+             <param name="id">The sample identifier.</param>
+             <param name="name">The sample name.</param>
+             <param name="summary">The sample summary.</param>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentSample.Id">
+             <summary>
+             The sample identifer.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentSample.Name">
+             <summary>
+             The sample name.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentSample.Summary">
+             <summary>
+             The sample summary.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentSample.SolutionFile">
+             <summary>
+             The sample solution file path.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentSample.DetailsFile">
+             <summary>
+             The sample details file path.
+             </summary>
+            </member>
+        <member name="T:Xamarin.Components.Packaging.ComponentPackageFileName">
+             <summary>
+             Represents the concrete parts of a component package file name.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackageFileName.Id">
+             <summary>
+             The component identifier.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackageFileName.Version">
+             <summary>
+             The component version.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackageFileName.RootDirectoryName">
+             <summary>
+             The component root directory name.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackageFileName.Trial">
+             <summary>
+             Is this component a trial.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackageFileName.#ctor(System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Xamarin.Components.Packaging.ComponentPackageFileName" /> class.
+             </summary>
+             <param name="path">The path to the package file on disk.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackageFileName.ToString">
+             <summary>
+             Returns a <see cref="T:System.String" /> that represents the current <see cref="T:Xamarin.Components.Packaging.ComponentPackageFileName" />.
+             </summary>
+             <returns>A <see cref="T:System.String" /> that represents the current <see cref="T:Xamarin.Components.Packaging.ComponentPackageFileName" />.</returns>
+            </member>
+        <member name="T:Xamarin.Components.Packaging.ComponentPackageDirectory">
+             <summary>
+             Represents an unpacked component package directory.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackageDirectory.#ctor(System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Xamarin.Components.Packaging.ComponentPackageDirectory" /> class.
+             </summary>
+             <param name="path">The path to the unpacked directory on disk.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackageDirectory.TryParseUid(System.String,System.String@,System.String@,System.Boolean@)">
+             <summary>
+             Tries to parse a unique identifier for the component out of the directory name.
+             </summary>
+             <returns><c>true</c>, if parsing was successful, <c>false</c> otherwise.</returns>
+             <param name="name">The directory name.</param>
+             <param name="id">The component identifier.</param>
+             <param name="version">The component version.</param>
+             <param name="trial">Is this component a trial?</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackageDirectory.GetPath(System.String[])">
+             <summary>
+             Gets a path inside the package directory.
+             </summary>
+             <returns>The path inside the package directory.</returns>
+             <param name="path">Path elements to append to the root.</param>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackageDirectory.HasDocs">
+             <summary>
+             Does this component package include docs?
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackageDirectory.Trial">
+             <summary>
+             Is this component a trial?
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackageDirectory.Path">
+             <summary>
+             The path to the unpacked component package directory
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackageDirectory.Id">
+             <summary>
+             The component identifier.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackageDirectory.Version">
+             <summary>
+             The component version.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackageDirectory.Manifest">
+             <summary>
+             The component manifest.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackageDirectory.LicenseFilePath">
+             <summary>
+             The path to the license.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackageDirectory.GettingStartedFilePath">
+             <summary>
+             The path to the getting started file.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackageDirectory.DetailsFilePath">
+             <summary>
+             The path to the details file.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackageDirectory.GetAssembliesForTarget(Xamarin.Components.ComponentTarget)">
+             <summary>
+             Gets the list of assemblies included in this package that match the given target.
+             </summary>
+             <returns>The assemblies matching the given target.</returns>
+             <param name="target">The target.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackageDirectory.GetAssemblies(System.String)">
+             <summary>
+             Gets all of the assemblies in a directory.
+             </summary>
+             <returns>The assemblies in a given directory.</returns>
+             <param name="dir">The director.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackageDirectory.HasAssemblies(System.String)">
+             <summary>
+             Checks if the component has any assemblies in the given directory.
+             </summary>
+             <returns><c>true</c> if the component has assemblies in the given directory; otherwise, <c>false</c>.</returns>
+             <param name="dir">The directory.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackageDirectory.GetSupportedTargets">
+             <summary>
+             Gets the supported targets for this component package.
+             </summary>
+             <returns>The supported targets.</returns>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackageDirectory.GetPackageDependenciesForTarget(Xamarin.Components.ComponentTarget)">
+             <summary>
+             Gets the list of package dependencies included in this package that match the given target.
+             </summary>
+             <returns>The package dependencies matching the given target.</returns>
+             <param name="target">The target.</param>
+            </member>
+        <member name="T:Xamarin.Components.Packaging.ComponentPackage">
+             <summary>
+             A component package.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackage.Manifest">
+             <summary>
+             The manifest data.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackage.PackagePath">
+             <summary>
+             The package path.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackage.License">
+             <summary>
+             The license text.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackage.Details">
+             <summary>
+             The details text.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackage.NuGetDescription">
+             <summary>
+             The description specifically for a NuGet Package which overrides Details if specified, when creating a .nupkg
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackage.GettingStarted">
+             <summary>
+             The getting started text.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackage.IncludesDocs">
+             <summary>
+             Does this component include documentation?
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackage.HasSamples">
+             <summary>
+             Does this component have samples?
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackage.HasSource">
+             <summary>
+             Does this component include source?
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackage.HasPopover">
+             <summary>
+             Does this component include a popover image?
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackage.AvailableFrameworks">
+             <summary>
+             The frameworks available in this component.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackage.ProvidedSamples">
+             <summary>
+             The samples that are provided by this component.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentPackage.ProvidedIcons">
+             <summary>
+             The icons provided by this component.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackage.GetZipDirectoryName(System.String)">
+             <summary>
+             Gets the directory name for the given file path string.
+             </summary>
+             <returns>The directory name inside the ZIP file.</returns>
+             <param name="filePath">The file path.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackage.ExtractLicense">
+             <summary>
+             Extracts the license data from the package.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackage.ExtractDetails">
+             <summary>
+             Extracts the details data from the package.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackage.ExtractNuGetDescription">
+             <summary>
+             Extracts the NuGetDescription data from the package.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackage.ExtractGettingStarted">
+             <summary>
+             Extracts the getting started document from the package.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackage.LoadAndCheckManifest(System.String,System.String,System.String)">
+             <summary>
+             Loads and checks the manifest.
+             </summary>
+             <param name="expectedId">Expected identifier.</param>
+             <param name="expectedVersion">Expected version.</param>
+             <param name="expectedDirectoryName">Expected root directory name.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackage.CheckAllEntriesAreRooted">
+             <summary>
+             Checks that all entries in the zip file are rooted correctly.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackage.GetLibrariesFromFramework(System.String)">
+             <summary>
+             Gets the libraries provided by the given framework alias.
+             </summary>
+             <returns>The libraries.</returns>
+             <param name="framework">The framework alias to retrieve the library list for.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackage.CheckVersionIsValidVersionNumber(System.String)">
+             <summary>
+             Checks the version is valid version number.
+             </summary>
+             <param name="expectedVersion">Expected version.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackage.ValidateIcons">
+             <summary>
+             Validates that at least one icon of the required sizes is present.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackage.CheckIfHasSource">
+             <summary>
+             Checks if the package includes source code.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackage.CheckIfHasSamples">
+             <summary>
+             Checks if the package includes samples.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackage.CheckIfHasDocs">
+             <summary>
+             Checks if the package includes documentation.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackage.PopulateAvailableFrameworks">
+             <summary>
+             Populates the available frameworks list.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackage.Init">
+             <summary>
+             Initializes the package by performing all of the checks.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackage.GetIcon(System.Int32,System.Boolean)">
+             <summary>
+             Gets an icon from inside the package.
+             </summary>
+             <returns>The icon data.</returns>
+             <param name="size">The icon size to retrieve.</param>
+             <param name="retina">If set to <c>true</c>, get the retina version of the icon.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackage.GetPopoverImage(System.Boolean)">
+             <summary>
+             Gets the popover image from inside the package.
+             </summary>
+             <returns>The popover image data.</returns>
+             <param name="retina">If set to <c>true</c>, get the retina version of the image.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackage.#ctor(System.String,System.IO.Stream)">
+             <summary>
+             Creates a new <see cref="T:Xamarin.Components.Packaging.ComponentPackage" /> instance with the given name and data.
+             </summary>
+             <param name="name">The package file name.</param>
+             <param name="data">The package data stream.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackage.#ctor(System.String,System.Byte[])">
+             <summary>
+             Creates a new <see cref="T:Xamarin.Components.Packaging.ComponentPackage" /> instance with the given name and data.
+             </summary>
+             <param name="name">The package file name.</param>
+             <param name="data">The package data.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentPackage.#ctor(System.String)">
+             <summary>
+             Creates a new <see cref="T:Xamarin.Components.Packaging.ComponentPackage" /> instance from the given file.
+             </summary>
+             <param name="file">The package file path.</param>
+            </member>
+        <member name="T:Xamarin.Components.Packaging.ComponentManifest">
+             <summary>
+             An in-memory representation of the component manifest.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentManifest.Format">
+             <summary>
+             The manifest format version.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentManifest.Id">
+             <summary>
+             The component ID in the manifest.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentManifest.Name">
+             <summary>
+             The component name in the manifest.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentManifest.Publisher">
+             <summary>
+             The component publisher.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentManifest.PublisherUrl">
+             <summary>
+             The URL to the publisher's web site.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentManifest.Version">
+             <summary>
+             The component version
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentManifest.Summary">
+             <summary>
+             The component summary.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentManifest.DocsUrl">
+             <summary>
+             A URL to general API documentation, guides, etc.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentManifest.SrcUrl">
+             <summary>
+             A URL to a source repository.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentManifest.Screenshots">
+             <summary>
+             The screenshots included with the component.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentManifest.Samples">
+             <summary>
+             The samples included with the component.
+             </summary>
+             <value>The samples.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentManifest.PackageDependencies">
+             <summary>
+             The NuGet packages that the component depends on.
+             </summary>
+             <value>The package dependencies.</value>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentManifest.HasPackageDependencies">
+             <summary>
+             Determines whether this instance has package dependencies.
+             </summary>
+             <returns><c>true</c> if this instance has package dependencies; otherwise, <c>false</c>.</returns>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentManifest.IsShell">
+             <summary>
+             Indicates that the generated component should be marked as a shell component.
+             This is only needed if the component includes dummy assemblies in its lib directory
+             which allows it to be installed in older versions of Xamarin Studio or Visual Studio.
+             When this is true the component when installed will not add references to the assemblies
+             in the lib directory. For older IDEs then the assembly references will be added and the
+             NuGet packages will not be installed.
+             </summary>
+             <value><c>true</c> if the component is a shell component; otherwise, <c>false</c>.</value>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentManifest.FromFile(System.String)">
+             <summary>
+             Loads a manifest from a file
+             </summary>
+             <returns>The loaded manifest.</returns>
+             <param name="file">The file to load from.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentManifest.FromStream(System.IO.Stream)">
+             <summary>
+             Loads a manifest from a stream
+             </summary>
+             <returns>The loaded manifest.</returns>
+             <param name="s">The stream to load from.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentManifest.GetRequiredElement(System.Xml.Linq.XElement,System.String)">
+             <summary>
+             Gets a required element with the given name from the parent node.
+             </summary>
+             <returns>The element.</returns>
+             <param name="parent">The parent node.</param>
+             <param name="name">The element name.</param>
+             <exception cref="T:Xamarin.Components.Packaging.InvalidManifestException">Thrown when the element cannot be found.</exception>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentManifest.GetRequiredAttribute(System.Xml.Linq.XElement,System.String)">
+             <summary>
+             Gets a required attribute with the given name from an element.
+             </summary>
+             <returns>The attribute.</returns>
+             <param name="parent">The node.</param>
+             <param name="name">The attribute name.</param>
+             <exception cref="T:Xamarin.Components.Packaging.InvalidManifestException">Thrown when the element cannot be found.</exception>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentManifest.CheckId(System.String,System.String)">
+             <summary>
+             Checks the ID attribute on an element is well-formed.
+             </summary>
+             <returns>The attribute value.</returns>
+             <param name="elementName">The element name.</param>
+             <param name="attributeValue">The attribute value.</param>
+             <exception cref="T:Xamarin.Components.Packaging.InvalidManifestException">Thrown when the value is malformed.</exception>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentManifest.CheckSampleId(System.String)">
+             <summary>
+             Checks that a sample identifier is well-formed.
+             </summary>
+             <returns>The sample identifier if well-formed.</returns>
+             <param name="attributeValue">Attribute value.</param>
+             <exception cref="T:Xamarin.Components.Packaging.InvalidManifestException">Thrown when the value is malformed.</exception>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentManifest.CheckPath(System.String,System.String,System.String,System.String[])">
+             <summary>
+             Checks that a path contains no disallowed characters.
+             </summary>
+             <returns>The path, if well-formed.</returns>
+             <param name="value">The path.</param>
+             <param name="elementName">The element containing it.</param>
+             <param name="valueName">The value containing the path.</param>
+             <param name="extensions">Valid extensions to accept as part of the path.</param>
+             <exception cref="T:Xamarin.Components.Packaging.InvalidManifestException">Thrown when the value is malformed.</exception>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentManifest.CheckPath(System.String,System.String,System.String,System.String)">
+             <summary>
+             Checks that a path contains no disallowed characters.
+             </summary>
+             <returns>The path, if well-formed.</returns>
+             <param name="value">The path.</param>
+             <param name="elementName">The element containing the path.</param>
+             <param name="valueName">The value containing the path.</param>
+             <param name="extension">A valid extension for the path to end with.</param>
+             <exception cref="T:Xamarin.Components.Packaging.InvalidManifestException">Thrown when the value is malformed.</exception>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentManifest.TryCheckPath(System.String,System.String,System.String,System.String,System.Exception@)">
+             <summary>
+             Checks a path.
+             </summary>
+             <returns><c>true</c>, if path is well-formed, <c>false</c> otherwise.</returns>
+             <param name="value">The path.</param>
+             <param name="elementName">The element containing the path.</param>
+             <param name="valueName">The value containing the path.</param>
+             <param name="extension">A valid extension for the path.</param>
+             <param name="error">An Exception variable to store any errors in.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentManifest.IsExtensionInvalid(System.String,System.String)">
+             <summary>
+             Checks if a file extension is vali.
+             </summary>
+             <returns><c>true</c> if the extension is valid; otherwise, <c>false</c>.</returns>
+             <param name="value">The path.</param>
+             <param name="extension">The target extension.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentManifest.DoesPathContainInvalidCharacters(System.String,System.Char@,System.Int32@)">
+             <summary>
+             Checks if a path contains invalid characters.
+             </summary>
+             <returns><c>true</c>, if the path contained invalid characters, <c>false</c> otherwise.</returns>
+             <param name="value">The path.</param>
+             <param name="invalidChar">A variable to store invalid characters in.</param>
+             <param name="invalidCharPosition">A variable to hold the invalid character position in.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentManifest.CheckValueLength(System.String,System.String,System.String,System.Int32)">
+             <summary>
+             Checks that the value length falls into a given range.
+             </summary>
+             <returns>The value, if checks pass.</returns>
+             <param name="value">The vaalue.</param>
+             <param name="name">The name of the element containing the value.</param>
+             <param name="parentName">The name of the parent of the element containing the value.</param>
+             <param name="maxLength">The max length.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentManifest.FromXDocument(System.Xml.Linq.XDocument)">
+             <summary>
+             Loads a manifest from an <see cref="T:System.Xml.Linq.XDocument">XDocument</see> instance
+             </summary>
+             <returns>The loaded manifest.</returns>
+             <param name="doc">The document.</param>
+            </member>
+        <member name="T:Xamarin.Components.Platform">
+             <summary>
+             Platform detection tools.
+             </summary>
+            </member>
+        <member name="F:Xamarin.Components.Platform.IsWindows">
+             <summary>
+             Are we running on Windows?
+             </summary>
+            </member>
+        <member name="F:Xamarin.Components.Platform.IsMac">
+             <summary>
+             Are we running on Mac?
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Platform.#ctor">
+             <summary>
+             Initializes the <see cref="T:Xamarin.Components.Platform" /> class.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Platform.AsNativePath(System.String)">
+             <summary>
+             Converts the path into a platform-supported file path
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Platform.AsWindowsPath(System.String)">
+             <summary>
+             Converts the path into a Windows-compatible file path
+             This format is used in project file references for all platforms
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Platform.AsUnixPath(System.String)">
+             <summary>
+             Converts the path into a Unix-compatible file path.
+             This format is used in the zip files for all platforms
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Platform.IsRunningOnMac">
+             <summary>
+             Determines if we are running on OS X.
+             </summary>
+             <returns><c>true</c> if we are running on OS X; otherwise, <c>false</c>.</returns>
+            </member>
+        <member name="T:Xamarin.Components.Packaging.Creation.LibrarySpec">
+             <summary>
+             Stores information about a library to be contained inside of a Xamarin component package.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.LibrarySpec.FilePath">
+             <summary>
+             Gets the library file path.
+             </summary>
+             <value>The library file path.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.LibrarySpec.Framework">
+             <summary>
+             Gets the framework directory to include this library in.
+             </summary>
+             <value>The framework directory to include this library in.</value>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.LibrarySpec.#ctor(System.String,System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Xamarin.Components.Packaging.Creation.LibrarySpec" /> class.
+             </summary>
+             <param name="path">The path to the library file.</param>
+             <param name="framework">The framework directory to include this library in.</param>
+            </member>
+        <member name="T:Xamarin.Components.Packaging.Creation.PackageSpec">
+             <summary>
+             Provides the skeleton definition for all of the parts that go into a package or into the package manifest.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.PackageFileName">
+             <summary>
+             Gets the package file name componentparts.
+             </summary>
+             <value>A structure representing the parts of the package file name.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.PackagePath">
+             <summary>
+             Gets the package path.
+             </summary>
+             <value>The package path on disk.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.PublisherUrl">
+             <summary>
+             Gets or sets the component publisher URL.
+             </summary>
+             <value>The component publisher URL.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.Name">
+             <summary>
+             Gets or sets the component name.
+             </summary>
+             <value>The component name.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.Publisher">
+             <summary>
+             Gets or sets the component publisher.
+             </summary>
+             <value>The component publisher.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.DocsUrl">
+             <summary>
+             Gets or sets the component documentation URL.
+             </summary>
+             <value>The component documentation URL.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.MonodocsPath">
+             <summary>
+             Gets or sets the path to Monodoc-format documentation.
+             </summary>
+             <value>The Monodoc-format documentation path.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.SrcUrl">
+             <summary>
+             Gets or sets a URL that points to the library source.
+             </summary>
+             <value>The source URL.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.PopoverPath">
+             <summary>
+             Gets or sets the path to the popover image to be included in the pacakge.
+             </summary>
+             <value>The popover image path.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.Summary">
+             <summary>
+             Gets or sets the component summary.
+             </summary>
+             <value>The componentsummary.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.DetailsPath">
+             <summary>
+             Gets or sets the Details.md path.
+             </summary>
+             <value>The Details.md path.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.NuGetDescriptionPath">
+             <summary>
+             Gets or sets the NuGetDescription.txt path.
+             </summary>
+             <value>The Details.md path.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.LicensePath">
+             <summary>
+             Gets or sets the License.md path.
+             </summary>
+             <value>The License.md path.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.GettingStartedPath">
+             <summary>
+             Gets or sets the GettingStarted.md path.
+             </summary>
+             <value>The GettingStarted.md path.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.SourcePath">
+             <summary>
+             Gets or sets the path to a source solution to include in the package.
+             </summary>
+             <value>The path to a source solution to include in the package.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.SkipDocs">
+             <summary>
+             Should we skip building documentation?
+             </summary>
+             <value><c>true</c> if we should skip building documentation in; otherwise, <c>false</c>.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.ScreenshotSpecs">
+             <summary>
+             Gets the list of screenshots to include with the component package.
+             </summary>
+             <value>The screenshots to include with the component package.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.IconPaths">
+             <summary>
+             Gets the icon paths.
+             </summary>
+             <value>The icon paths to include.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.LibrarySpecs">
+             <summary>
+             Gets the list of libraries to include in the component package.
+             </summary>
+             <value>The list of libraries to includes in the component package.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.SampleSpecs">
+             <summary>
+             Gets the list of samples to include in the component packages.
+             </summary>
+             <value>The samples to include in the component package.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.PackageDependencySpecs">
+             <summary>
+             Gets the list of NuGet packages the component depends on.
+             </summary>
+             <value>The list of NuGet packages the component depends on.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.LocalNuGetRepoPath">
+             <summary>
+             Gets or sets the local NuGet repo path.
+             </summary>
+             <value>The local NuGet repo path.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageSpec.IsShell">
+             <summary>
+             Indicates that the generated component should be marked as a shell component.
+             This is only needed if the component includes dummy assemblies in its lib directory
+             which allows it to be installed in older versions of Xamarin Studio or Visual Studio.
+             When this is true the component when installed will not add references to the assemblies
+             in the lib directory. For older IDEs then the assembly references will be added and the
+             NuGet packages will not be installed.
+             </summary>
+             <value><c>true</c> if the component is a shell component; otherwise, <c>false</c>.</value>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageSpec.#ctor(System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Xamarin.Components.Packaging.Creation.PackageSpec" /> class.
+             </summary>
+             <param name="packagePath">Package path.</param>
+            </member>
+        <member name="T:Xamarin.Components.SampleSpec">
+             <summary>
+             Defines a sample to be included in the package.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.SampleSpec.FilePath">
+             <summary>
+             The path to the sample solution.
+             </summary>
+             <value>The path to the sample solution.</value>
+            </member>
+        <member name="P:Xamarin.Components.SampleSpec.Name">
+             <summary>
+             The sample name.
+             </summary>
+             <value>The sample name.</value>
+            </member>
+        <member name="P:Xamarin.Components.SampleSpec.Summary">
+             <summary>
+             Gets the sample summary description.
+             </summary>
+             <value>The sample's summary description.</value>
+            </member>
+        <member name="P:Xamarin.Components.SampleSpec.RemoveProjects">
+             <summary>
+             Gets the projects to remove at package time.
+             </summary>
+             <value>The projects to remove.</value>
+            </member>
+        <member name="P:Xamarin.Components.SampleSpec.RemoveFiles">
+             <summary>
+             Gets the projects to remove at package time.
+             </summary>
+             <value>The projects to remove.</value>
+            </member>
+        <member name="P:Xamarin.Components.SampleSpec.InstallNuGets">
+             <summary>
+             Gets the Nugets to install at package time.
+             </summary>
+             <value>The ProjectName NuGets pairs to add.</value>
+            </member>
+        <member name="P:Xamarin.Components.SampleSpec.SampleId">
+             <summary>
+             Gets the sample identifier
+             </summary>
+             <value>The sample identifier.</value>
+            </member>
+        <member name="P:Xamarin.Components.SampleSpec.WriteIntoManifest">
+             <summary>
+             Gets a value indicating whether this <see cref="T:Xamarin.Components.SampleSpec" /> should be written into the manifest.
+             </summary>
+             <value><c>true</c> if this sample should be written into the manifest; otherwise, <c>false</c>.</value>
+            </member>
+        <member name="M:Xamarin.Components.SampleSpec.#ctor(System.String,System.String,System.String,System.Boolean,System.Object,System.Collections.Generic.Dictionary{System.String,System.String[]},System.Object,System.Object)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Xamarin.Components.SampleSpec" /> class.
+             </summary>
+             <param name="path">The path to the sample solution.</param>
+             <param name="name">The sample name.</param>
+             <param name="summary">The sample summary.</param>
+             <param name="writeIntoManifest">If set to <c>true</c>, write this sample into manifest.</param>
+            </member>
+        <member name="T:Xamarin.Components.Packaging.Creation.ScreenshotSpec">
+             <summary>
+             Describes a screenshot that is to be included into the package.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.ScreenshotSpec.FilePath">
+             <summary>
+             Gets the path to the screenshot on disk.
+             </summary>
+             <value>The path to the screenshot on disk.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.ScreenshotSpec.Title">
+             <summary>
+             Gets the screenshot title.
+             </summary>
+             <value>The screenshot title.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.ScreenshotSpec.FileName">
+             <summary>
+             Gets the name of the file.
+             </summary>
+             <value>The name of the file.</value>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.ScreenshotSpec.#ctor(System.String,System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Xamarin.Components.Packaging.Creation.ScreenshotSpec" /> class.
+             </summary>
+             <param name="path">The path to the screenshot file.</param>
+             <param name="title">The screenshot title.</param>
+            </member>
+        <member name="T:Xamarin.Components.Packaging.Creation.PackageCreator">
+             <summary>
+             Does the work of creating a package from a bucnh of specification objects.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.#ctor">
+             <summary>
+             Initializes a new instance of the <see cref="T:Xamarin.Components.Packaging.Creation.PackageCreator" /> class.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.ValidatePackage(System.String)">
+             <summary>
+             Validates the given package
+             </summary>
+             <param name="packagePath">The path to the package to validate.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.CreatePackage(Xamarin.Components.Packaging.Creation.PackageSpec)">
+             <summary>
+             Creates a package from the given package definition.
+             </summary>
+             <param name="spec">Spec.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.WriteManifest(ICSharpCode.SharpZipLib.Zip.ZipOutputStream,Xamarin.Components.Packaging.Creation.PackageSpec)">
+             <summary>
+             Writes the manifest into the package file.
+             </summary>
+             <param name="zipStream">Package file stream.</param>
+             <param name="spec">The package descriptor object.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.WriteLibrary(ICSharpCode.SharpZipLib.Zip.ZipOutputStream,Xamarin.Components.Packaging.Creation.PackageSpec,Xamarin.Components.Packaging.Creation.LibrarySpec)">
+             <summary>
+             Writes the given library into the package file.
+             </summary>
+             <param name="zipStream">The package file stream.</param>
+             <param name="spec">The package definition.</param>
+             <param name="library">The library definition.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.WriteScreenshot(ICSharpCode.SharpZipLib.Zip.ZipOutputStream,Xamarin.Components.Packaging.Creation.PackageSpec,Xamarin.Components.Packaging.Creation.ScreenshotSpec)">
+             <summary>
+             Writes the given screenshot into the package file.
+             </summary>
+             <param name="zipStream">The package file stream.</param>
+             <param name="spec">The package definition.</param>
+             <param name="screenshot">The screenshot definition.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.WriteSample(ICSharpCode.SharpZipLib.Zip.ZipOutputStream,Xamarin.Components.Packaging.Creation.PackageSpec,Xamarin.Components.SampleSpec)">
+             <summary>
+             Writes a sample project into the package file.
+             </summary>
+             <param name="zipStream">The package file stream.</param>
+             <param name="spec">The package definition.</param>
+             <param name="sampleSpec">The sample definition.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.WriteSampleSolution(ICSharpCode.SharpZipLib.Zip.ZipOutputStream,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+             <summary>
+             Rewrites a solution file to exclude certain projects.
+             </summary>
+             <param name="projectsToExclude">Projects to exclude.</param>
+             <param name="zipStream">The ZIP file stream to write into</param>
+             <param name="entryName">The entry name to write into the ZIP file</param>
+             <param name="filePath">The path to the sample solution.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.WriteSampleCsproj(Xamarin.Components.Packaging.Creation.PackageSpec,Xamarin.Components.SampleSpec,ICSharpCode.SharpZipLib.Zip.ZipOutputStream,System.String,System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+             <summary>
+             Rewrites a sample project so that its references will work when
+             deployed.
+             For Project References: If the project reference matches a lib file, then
+               it is replaced with a binary reference.
+             For Binary References: If the lib contains the file, then the entry is
+               rewritten to point to the lib directory.
+             </summary>
+             <returns>
+             A list of projects that should be excluded from the solution
+             </returns>
+             <param name="spec">The package definition.</param>
+             <param name="zipStream">The package file stream.</param>
+             <param name="entryName">The reference entry name.</param>
+             <param name="filePath">The reference file path.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.RewriteBinaryReferences(System.Xml.XmlElement,System.String,System.Collections.Generic.List{Xamarin.Components.Packaging.LibAssemblyRef},System.Xml.XmlElement,System.Xml.XmlDocument,System.String[])">
+             <summary>
+             Rewrites the binary references in the given item group.
+             </summary>
+             <param name="itemGroup">The item group.</param>
+             <param name="projDir">The project directory.</param>
+             <param name="libAsms">The assemblies to be included in the package.</param>
+             <param name="refsGroup">The item group to append new references to.</param>
+             <param name="xdoc">The document that contains the parsed .csproj.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.AssembliesMatch(System.String,System.String)">
+             <summary>
+             Checks if two assemblies match.
+             </summary>
+             <returns><c>true</c>, if assemblies matched, <c>false</c> otherwise.</returns>
+             <param name="asmPath1">The path to the first assembly.</param>
+             <param name="asmPath2">The path to another assembly.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.GetAllLibAssemblies(Xamarin.Components.Packaging.Creation.PackageSpec,System.String)">
+             <summary>
+             Gets the set of all assembly references for a given package and entry name.
+             </summary>
+             <returns>All assembly references matching the relative depth of the given entry name.</returns>
+             <param name="spec">The package definition.</param>
+             <param name="entryName">The entry name.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.GetCsprojIncludedProjects(System.String)">
+             <summary>
+             Gets the list of projects referenced by a given project.
+             </summary>
+             <returns>The projects referenced by the given project.</returns>
+             <param name="csprojPath">The project to inspect.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.GetCsprojOutputPaths(System.String)">
+             <summary>
+             Gets the output paths for the artifacts from building the given project.
+             </summary>
+             <returns>The csproj output paths.</returns>
+             <param name="csprojPath">Csproj path.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.WriteSource(ICSharpCode.SharpZipLib.Zip.ZipOutputStream,Xamarin.Components.Packaging.Creation.PackageSpec)">
+             <summary>
+             Writes the component source into the package.
+             </summary>
+             <param name="zipStream">The package file stream.</param>
+             <param name="spec">The package definition.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.GetPathToMdocTool">
+             <summary>
+             Gets the path to the build tool to use when we need to build things.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.AssembleDocs(System.String,Xamarin.Components.Packaging.Creation.PackageSpec)">
+             <summary>
+             Generates assembled mdoc-format docs, assuming that the passed path has them.
+             </summary>
+             <param name="docPath">Path to docs.</param>
+             <param name="spec">The package specification.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.WriteMonodocs(ICSharpCode.SharpZipLib.Zip.ZipOutputStream,Xamarin.Components.Packaging.Creation.PackageSpec)">
+             <summary>
+             Writes the generated Monodoc format docs into the package.
+             </summary>
+             <param name="zipStream">The package file stream.</param>
+             <param name="spec">The package definition.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.WriteSourceFile(System.String,Xamarin.Components.Packaging.Creation.PackageSpec)">
+             <summary>
+             Writes the Monodoc .source file, if there isn't a prewritten one.
+             </summary>
+             <param name="path">Path to write the .source file to.</param>
+             <param name="spec">The package definition.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.WriteMonodocsUsingXmldocs(ICSharpCode.SharpZipLib.Zip.ZipOutputStream,Xamarin.Components.Packaging.Creation.PackageSpec)">
+             <summary>
+             Generates Monodoc format documentation from the libraries.
+             </summary>
+             <param name="zipStream">The package file stream.</param>
+             <param name="spec">The package definition.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.WriteDirectory(ICSharpCode.SharpZipLib.Zip.ZipOutputStream,System.String,System.String,Xamarin.Components.Packaging.Creation.PackageCreator.WriteFileFunc)">
+             <summary>
+             Writes a directory into the package.
+             </summary>
+             <param name="zipStream">The package file stream.</param>
+             <param name="entryDir">The entry directory inside the package.</param>
+             <param name="realDir">The real directory to write.</param>
+             <param name="writeFile">A filter delegate that does the actual file writing.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.WriteFile(ICSharpCode.SharpZipLib.Zip.ZipOutputStream,System.String,System.String)">
+             <summary>
+             Writes a file into the package.
+             </summary>
+             <param name="zipStream">The package file stream.</param>
+             <param name="entryName">The target path inside the package.</param>
+             <param name="filePath">The file to write in.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageCreator.WriteEntry(ICSharpCode.SharpZipLib.Zip.ZipOutputStream,System.String,System.IO.Stream)">
+             <summary>
+             Writes a file into the package.
+             </summary>
+             <param name="zipStream">The package file strea.</param>
+             <param name="entryName">The target path inside the package.</param>
+             <param name="entryStream">The stream to write from.</param>
+            </member>
+        <member name="T:Xamarin.Components.Packaging.Utility">
+             <summary>
+             Utility methods.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Utility.Exe(System.String,System.String[])">
+             <summary>
+             Shells out to the specified command, with the given arguments.
+             </summary>
+             <param name="command">The command to execute.</param>
+             <param name="args">The arguments to pass to the command.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Utility.Exe(System.String,System.Boolean,System.String[])">
+             <summary>
+             Shells out to the specified command, with the given arguments.
+             </summary>
+             <param name="command">The command to execute.</param>
+             <param name="verbose">If true, write stdout from process to console</param>
+             <param name="args">The arguments to pass to the command.</param>
+            </member>
+        <member name="T:Xamarin.Components.Packaging.LibAssemblyRef">
+             <summary>
+             A reference object for assemblies included as part of the component package libraries.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.LibAssemblyRef.Path">
+             <summary>
+             Gets or sets the path to the assembly.
+             </summary>
+             <value>The path to the assembly.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.LibAssemblyRef.Spec">
+             <summary>
+             The original library definition.
+             </summary>
+             <value>The library definition.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.LibAssemblyRef.RelativePath">
+             <summary>
+             The relative path to the library.
+             </summary>
+             <value>The relative path to the library.</value>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.LibAssemblyRef.CreateReferenceElement(System.Xml.XmlDocument)">
+             <summary>
+             Creates a Reference element that can be used in an MSBuild project to refer to this library.
+             </summary>
+             <returns>The created reference element.</returns>
+             <param name="xdoc">The XML document to attach the element to.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.LibAssemblyRef.ToString">
+             <summary>
+             Returns a <see cref="T:System.String" /> that represents the current <see cref="T:Xamarin.Components.Packaging.LibAssemblyRef" />.
+             </summary>
+             <returns>A <see cref="T:System.String" /> that represents the current <see cref="T:Xamarin.Components.Packaging.LibAssemblyRef" />.</returns>
+            </member>
+        <member name="T:Xamarin.Components.Packaging.PackageDependency">
+             <summary>
+             Represents a NuGet package dependency.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.PackageDependency.FromElement(System.Xml.Linq.XElement)">
+             <summary>
+             Loads a NuGet package dependency instance from an XML element
+             </summary>
+             <returns>The package dependency instance.</returns>
+             <param name="el">The XML element.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.PackageDependency.#ctor(System.String,System.String,System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Xamarin.Components.Packaging.PackageDependency" /> class.
+             </summary>
+             <param name="id">The package id.</param>
+             <param name="version">The package version.</param>
+             <param name="framework">The project target framework the package will be used with.</param>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.PackageDependency.Id">
+             <summary>
+             The Package Id.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.PackageDependency.Version">
+             <summary>
+             The Package version.
+             </summary>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.PackageDependency.Framework">
+             <summary>
+             The target framework for the package.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.PackageDependency.GetOptionalAttributeValue(System.Xml.Linq.XElement,System.String)">
+             <summary>
+             Gets the optional attribute value.
+             </summary>
+             <returns>The optional attribute value.</returns>
+             <param name="parent">The parent element.</param>
+             <param name="name">The attribute name.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.PackageDependency.GetFramework(System.String)">
+             <summary>
+             Converts the framework string into a ComponentTarget.
+             </summary>
+             <returns>The framework.</returns>
+             <param name="framework">The framework defined in the manifest.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.PackageDependency.HasTarget(Xamarin.Components.ComponentTarget)">
+             <summary>
+             Determines whether the package dependency should be used for the specified target.
+             </summary>
+             <returns><c>true</c> if this instance has target the specified target; otherwise, <c>false</c>.</returns>
+             <param name="target">The target.</param>
+            </member>
+        <member name="T:Xamarin.Components.Packaging.Creation.PackageDependencySpec">
+             <summary>
+             Stores information about a NuGet package that Xamarin component has as a depdendency.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageDependencySpec.#ctor(System.String,System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Xamarin.Components.Packaging.Creation.PackageDependencySpec" /> class.
+             </summary>
+             <param name="packageDependency">The NuGet package dependency.</param>
+             <param name="framework">The framework where this NuGet package should be used.</param>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageDependencySpec.PackageId">
+             <summary>
+             Gets the NuGet package id.
+             </summary>
+             <value>The NuGet package id.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageDependencySpec.Version">
+             <summary>
+             Gets the NuGet package version.
+             </summary>
+             <value>The NuGet package version.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.Creation.PackageDependencySpec.Framework">
+             <summary>
+             Gets the framework for the NuGet package
+             </summary>
+             <value>The framework.</value>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.Creation.PackageDependencySpec.HasFramework">
+             <summary>
+             Determines whether this instance has framework defined.
+             </summary>
+             <returns><c>true</c> if this instance has framework; otherwise, <c>false</c>.</returns>
+            </member>
+        <member name="T:Xamarin.Components.Packaging.ComponentSolutionConfigFile">
+             <summary>
+             A component.config file that allows the solution's component cache directory
+             to be configured.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentSolutionConfigFile.Load(System.String)">
+             <summary>
+             Loads the configuration file.
+             </summary>
+             <param name="fileName">Configuration file name.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentSolutionConfigFile.GetComponentsCachePath">
+             <summary>
+             Gets the components cache path from the configuration file.
+             </summary>
+             <returns>The components cache path.</returns>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentSolutionConfigFile.IsComponentsCachePath(System.String)">
+             <summary>
+             Determines if configuration item is for the components cache path.
+             </summary>
+             <returns><c>true</c> if it is the components cache; otherwise, <c>false</c>.</returns>
+             <param name="name">Name.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentSolutionConfigFile.GetFullPath(System.String)">
+             <summary>
+             Gets the full normalized path for the directory.
+             </summary>
+             <returns>The full path.</returns>
+             <param name="directory">Directory.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentSolutionConfigFile.NormalizeDirectory(System.String)">
+             <summary>
+             Normalizes the directory. The components.config file can contain backslashes
+             which will be replaced based on the current operating system.
+             </summary>
+             <returns>The directory.</returns>
+             <param name="directory">Directory.</param>
+            </member>
+        <member name="T:Xamarin.Components.Packaging.ComponentSolutionCachePath">
+             <summary>
+             Component cache path for a solution.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentSolutionCachePath.#ctor(System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Xamarin.Components.Packaging.ComponentSolutionCachePath" /> class.
+             </summary>
+             <param name="solutionDirectory">Solution directory.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentSolutionCachePath.GetPath(System.String)">
+             <summary>
+             Gets the component cache path for a solution.
+             </summary>
+             <returns>The path.</returns>
+             <param name="solutionDirectory">Solution directory.</param>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentSolutionCachePath.CachePath">
+             <summary>
+             Gets the component cache path for a solution.
+             </summary>
+             <value>The path.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentSolutionCachePath.IsComponentsConfigFileFound">
+             <summary>
+             Gets a value indicating whether this <see cref="T:Xamarin.Components.Packaging.ComponentSolutionCachePath" />
+             components config file found.
+             </summary>
+             <value><c>true</c> if components config file found; otherwise, <c>false</c>.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentSolutionCachePath.ComponentsConfigFileName">
+             <summary>
+             Gets the name of the components config file found.
+             </summary>
+             <value>The name of the components config file.</value>
+            </member>
+        <member name="P:Xamarin.Components.Packaging.ComponentSolutionCachePath.ComponentsConfigFileHasCachePath">
+             <summary>
+             Gets a value indicating whether this <see cref="T:Xamarin.Components.Packaging.ComponentSolutionCachePath" />
+             components config file has cache path.
+             </summary>
+             <value><c>true</c> if components config file has cache path; otherwise, <c>false</c>.</value>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentSolutionCachePath.GetComponentsConfigFilesChecked">
+             <summary>
+             Gets the components config files checked.
+             </summary>
+             <returns>The components config files checked.</returns>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentSolutionCachePath.FindPath">
+             <summary>
+             Finds the component cache path for a solution.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentSolutionCachePath.GetDefaultPath(System.String)">
+             <summary>
+             Gets the default component cache path for a solution.
+             </summary>
+             <returns>The default path.</returns>
+             <param name="solutionDirectory">Solution directory.</param>
+            </member>
+        <member name="T:Xamarin.Components.Packaging.ComponentSolutionConfigFilePaths">
+             <summary>
+             Component solution config file paths.
+             </summary>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentSolutionConfigFilePaths.GetDirectories(System.String)">
+             <summary>
+             Gets the directories that may contain a configuration file.
+             </summary>
+             <returns>The directories.</returns>
+             <param name="solutionDirectory">Solution directory.</param>
+            </member>
+        <member name="M:Xamarin.Components.Packaging.ComponentSolutionConfigFilePaths.GetAppDataDirectory">
+             <summary>
+             Gets the app data directory.
+             </summary>
+             <returns>The app data directory.</returns>
+            </member>
+    </members>
+</doc>

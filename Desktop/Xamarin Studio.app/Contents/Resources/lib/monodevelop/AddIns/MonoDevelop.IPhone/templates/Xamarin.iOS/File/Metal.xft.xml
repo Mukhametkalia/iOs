@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Metal File</_Name>
+		<_Category projectType="XamarinIOS">iOS</_Category>
+		<_Category projectType="TVOS">tvOS</_Category>
+		<Icon>file-metal</Icon>
+		<LanguageName>*</LanguageName>
+		<DefaultFilename>File</DefaultFilename>
+		<ProjectType>XamarinIOS, TVOS</ProjectType>
+		<_Description>A Metal shader source file.</_Description>
+	</TemplateConfiguration>
+
+	<Conditions>
+		<ParentProject RequireProject="True"/>
+	</Conditions>
+	
+	<TemplateFiles>
+		<File Name="${Name}.metal" DefaultExtension=".metal" SuppressAutoOpen="true" AddStandardHeader="true">
+<![CDATA[#include <metal_stdlib>
+using namespace metal;
+
+]]></File>
+	</TemplateFiles>
+</Template>

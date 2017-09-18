@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Broadcast UI Extension</_Name>
+		<Visibility>NewProject</Visibility>
+		<Category>tvos/extension/general</Category>
+		<Icon>md-tvos-broadcast-extension-project</Icon>
+		<Image id="md-tvos-broadcast-extension-project" />
+		<Wizard>MonoDevelop.IPhone.ExtensionProjectTemplateWizard</Wizard>
+		<SupportedParameters>tvOS</SupportedParameters>
+		<LanguageName>C#</LanguageName>
+		<_Description><![CDATA[Creates a Broadcast UI extension which lets users sign into the service and set up a broadcast.]]></_Description>
+	</TemplateConfiguration>
+
+	<Actions>
+		<Open filename = "BroadcastViewController.cs"/>
+	</Actions>
+
+	<Combine name = "${ProjectName}" directory = ".">
+		<Project name="${ProjectName}" directory="." type="TVOSAppExtension">
+			<Options Target="Library" TargetFrameworkVersion="Xamarin.TVOS,Version=v1.0" />
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="Xamarin.TVOS" />
+			</References>
+			<Files>
+				<Directory name="Resources"/>
+				<File name="Info.plist" AddStandardHeader="False" src="Info.plist.xml" />
+				<File name="Entitlements.plist" AddStandardHeader="False" src="../../Common/Entitlements.plist.xml" />
+				<File name="MainInterface.storyboard" src="MainInterface.storyboard" />
+				<File name="BroadcastViewController.cs" AddStandardHeader="True" src="../../BroadcastUIExtension/BroadcastViewController.cs" />
+				<File name="BroadcastViewController.designer.cs" AddStandardHeader="False" DependsOn="BroadcastViewController.cs" src="../../BroadcastUIExtension/BroadcastViewController.designer.cs" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

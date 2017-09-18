@@ -1,0 +1,76 @@
+﻿<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>WatchKit App</_Name>
+		<Visibility>NewProject</Visibility>
+		<_Category>watchos/app/general</_Category>
+		<Icon>md-watchos-project</Icon>
+		<Image id="md-watchos-project" />
+		<Wizard>MonoDevelop.IPhone.WatchKitProjectTemplateWizard</Wizard>
+		<SupportedParameters>watchOS2</SupportedParameters>
+		<LanguageName>C#</LanguageName>
+		<_Description><![CDATA[Creates a WatchKit App and a WatchKit Extension for watchOS v2.0 or later.]]></_Description>
+	</TemplateConfiguration>
+	<Combine name="${ProjectName}" directory=".">
+		<Project name="${ParentProject}.${ProjectName}" directory="${ParentProject}.${ProjectName}" type="WatchOSApp">
+			<Options Target="Library" TargetFrameworkVersion="Xamarin.WatchOS,Version=v1.0" />
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="Xamarin.WatchOS" />
+			</References>
+			<Files>
+				<Directory name="Assets.xcassets">
+					<Directory name="AppIcon.appiconset">
+						<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../File/AppIcons.json" />
+					</Directory>
+
+					<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../File/Empty.json" />
+				</Directory>
+				<Directory name="Resources" />
+				<File name="Info.plist" AddStandardHeader="False" src="WatchApp/Info.plist.xml" />
+				<File name="Entitlements.plist" AddStandardHeader="False" src="../Common/Entitlements.plist.xml" />
+				<File name="Interface.storyboard" src="WatchApp/Interface.storyboard" />
+			</Files>
+		</Project>
+		<Project name="${ParentProject}.${ProjectName}Extension" directory="${ParentProject}.${ProjectName}Extension" type="WatchOSAppExtension">
+			<Options Target="Library" TargetFrameworkVersion="Xamarin.WatchOS,Version=v1.0" />
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" />
+				<Reference type="Gac" refto="Xamarin.WatchOS" />
+			</References>
+			<Files>
+				<Directory name="Assets.xcassets">
+					<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../File/Empty.json" />
+					<Directory name="Complication.complicationset" if="HasComplication" >
+						<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../File/ComplicationSet.json" if="HasComplication" />
+						<Directory name="Circular.imageset" if="HasComplication" >
+							<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../File/Empty.json" if="HasComplication" />
+						</Directory>
+						<Directory name="Modular.imageset" if="HasComplication" >
+							<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../File/Empty.json" if="HasComplication" />
+						</Directory>
+						<Directory name="Utilitarian.imageset" if="HasComplication" >
+							<RawFile name="Contents.json" SuppressAutoOpen="False" BuildAction="ImageAsset" src="../../File/Empty.json" if="HasComplication" />
+						</Directory>
+					</Directory>
+				</Directory>
+				<Directory name="Resources" />
+				<File name="Info.plist" AddStandardHeader="False" src="WatchKitExtension/Info.plist.xml" />
+				<File name="Entitlements.plist" AddStandardHeader="False" src="../Common/Entitlements.plist.xml" />
+				<File name="ComplicationController.cs" AddStandardHeader="True" src="WatchKitExtension/ComplicationController.cs" if="HasComplication" />
+				<File name="ExtensionDelegate.cs" AddStandardHeader="True" src="WatchKitExtension/ExtensionDelegate.cs" />
+				<File name="GlanceController.cs" AddStandardHeader="True" src="WatchKitExtension/GlanceController.cs" if="HasGlanceScene" />
+				<File name="GlanceController.designer.cs" AddStandardHeader="False" DependsOn="GlanceController.cs" src="WatchKitExtension/GlanceController.designer.cs" if="HasGlanceScene" />
+				<File name="InterfaceController.cs" AddStandardHeader="True" src="WatchKitExtension/InterfaceController.cs" />
+				<File name="InterfaceController.designer.cs" AddStandardHeader="False" DependsOn="InterfaceController.cs" src="WatchKitExtension/InterfaceController.designer.cs" />
+				<File name="NotificationController.cs" AddStandardHeader="True" src="WatchKitExtension/NotificationController.cs" if="HasNotificationScene" />
+				<File name="NotificationController.designer.cs" AddStandardHeader="False" DependsOn="NotificationController.cs" src="WatchKitExtension/NotificationController.designer.cs" if="HasNotificationScene" />
+				<FileTemplateReference TemplateID="NotificationSimulationFile" name="PushNotificationPayload.json" if="HasNotificationScene" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

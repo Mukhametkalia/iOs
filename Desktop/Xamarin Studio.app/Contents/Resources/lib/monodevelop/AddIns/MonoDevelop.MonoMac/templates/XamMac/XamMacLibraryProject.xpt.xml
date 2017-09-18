@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Library Project</_Name>
+		<Visibility>NewProject</Visibility>
+		<Category>mac/library/classic</Category>
+		<Icon>md-macos-library-project</Icon>
+		<Image id="md-macos-library-project" />
+		<LanguageName>C#</LanguageName>
+		<_Description>A basic Cocoa Mac library project.</_Description>
+	</TemplateConfiguration>
+	
+	<Actions>
+	</Actions>
+	
+	<Combine name = "${ProjectName}" directory = ".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		
+		<Project name = "${ProjectName}" directory = "." type = "XamMac">
+			<Options Target = "Library" />
+			<References>
+				<Reference type="Gac" refto="System" />
+				<Reference type="Gac" refto="System.Xml" />
+				<Reference type="Gac" refto="System.Core" />
+				<Reference type="Gac" refto="System.Xml.Linq" />
+				<Reference type="Gac" refto="System.Drawing" />
+				<Reference type="Gac" refto="XamMac" SpecificVersion="false" />
+			</References>
+			<Files>
+				<Directory name="Resources" />
+				<FileTemplateReference TemplateID="EmptyClass" name="MyClass.cs" />
+				<FileTemplateReference TemplateID="CSharpAssemblyInfo" name="AssemblyInfo.cs" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>
